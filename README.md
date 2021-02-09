@@ -6,4 +6,5 @@
 
 - アプリケーション詳細設計
 
-- ワイヤーフレーム: https://cacoo.com/diagrams/E06FPr4dLFVvTkBF/212FB
+- ワイヤーフレーム(User側): https://cacoo.com/diagrams/E06FPr4dLFVvTkBF/212FB
+- ワイヤーフレーム(Admin側): https://cacoo.com/diagrams/TgHQnS1LTYGwQUqd/23AF6
