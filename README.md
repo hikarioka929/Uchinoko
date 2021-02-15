@@ -4,7 +4,7 @@
 
 - テーブル定義書：  https://docs.google.com/spreadsheets/d/1N47YNUUY6kwCEUwJaUG2z3brxZpq_fXURs-8QbabRsw/edit?usp=sharing
 
-- アプリケーション詳細設計
+- アプリケーション詳細設計: https://docs.google.com/spreadsheets/d/13t-ybMY_t6Pa6wesM-CCH2Qq_RvoEQ32PDV71F5WaAE/edit?usp=sharing
 
 - ワイヤーフレーム(User側): https://cacoo.com/diagrams/E06FPr4dLFVvTkBF/212FB
 - ワイヤーフレーム(Admin側): https://cacoo.com/diagrams/TgHQnS1LTYGwQUqd/23AF6
