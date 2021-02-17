@@ -1,24 +1,10 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+- ER図：　https://lucid.app/lucidchart/invitations/accept/7d502bce-b265-45db-ac44-3aa24271e468
 
-Things you may want to cover:
+- テーブル定義書：  https://docs.google.com/spreadsheets/d/1N47YNUUY6kwCEUwJaUG2z3brxZpq_fXURs-8QbabRsw/edit?usp=sharing
 
-* Ruby version
+- アプリケーション詳細設計: https://docs.google.com/spreadsheets/d/13t-ybMY_t6Pa6wesM-CCH2Qq_RvoEQ32PDV71F5WaAE/edit?usp=sharing
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- ワイヤーフレーム(User側): https://cacoo.com/diagrams/E06FPr4dLFVvTkBF/212FB
+- ワイヤーフレーム(Admin側): https://cacoo.com/diagrams/TgHQnS1LTYGwQUqd/23AF6
