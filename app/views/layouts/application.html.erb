@@ -5,11 +5,82 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
   </head>
 
-  <body>
-    <%= yield %>
+  <body class= "all">
+
+  <header class="sticky-top">
+  <nav class="navbar navbar-expand-lg header-css">
+    <div class="container">
+    <%= link_to "うちの子。", root_path, class: "header-logo logobig" %>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <% if admin_signed_in? %>
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Features</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Pricing</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" href="#">Disabled</a>
+        </li>
+      </ul>
+      <% elsif user_signed_in? %>
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <%= link_to "投稿一覧", root_path, class: "header-logo" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "みんなのうちの子", root_path, class: "header-logo" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "うちの子一覧", about_path, class: "header-logo" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "header-logo" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to about_path, class: "header-logo userlogo" do %>
+          <i class="fa fa-user-circle"></i>
+          <% end %>
+        </li>
+      </ul>
+      <% else %>
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <%= link_to "みんなのうちの子", root_path, class: "header-logo" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "投稿一覧", root_path, class: "header-logo" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "うちの子とは", about_path, class: "header-logo" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "新規登録", new_user_registration_path, class: "header-logo" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "ログイン", new_user_session_path, class: "header-logo" %>
+        </li>
+      </ul>
+      <% end %>
+    </div>
+    </div>
+  </nav>
+  </header>
+
+      <%= yield %>
+
   </body>
 </html>

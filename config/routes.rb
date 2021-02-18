@@ -16,6 +16,9 @@ end
   }
   end
 
+  resources :users, except: [:index,:create,:destroy,:new]
+  resources :posts
+  resources :pets
   root "homes#index"
   get "/about" => "homes#about"
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
