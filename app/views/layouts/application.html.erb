@@ -16,26 +16,27 @@
   <header class="sticky-top">
   <nav class="navbar navbar-expand-lg header-css">
     <div class="container">
+    <% if admin_signed_in? %>
+    <%= link_to "うちの子。", admins_root_path, class: "header-logo logobig" %>
+    <% else %>
     <%= link_to "うちの子。", root_path, class: "header-logo logobig" %>
+    <% end %>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
       <% if admin_signed_in? %>
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Features</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Pricing</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link disabled" href="#">Disabled</a>
-        </li>
-      </ul>
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <%= link_to "会員様一覧", users_path, class: "header-logo" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "ジャンル一覧", admins_genres_path, class: "header-logo" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "ログアウト", destroy_admin_session_path, method: :delete, class: "header-logo" %>
+          </li>
+        </ul>
       <% elsif user_signed_in? %>
       <ul class="navbar-nav">
         <li class="nav-item">

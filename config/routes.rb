@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
   scope module: 'admin' do
-  devise_for :admins, controllers: {
+    devise_for :admins, controllers: {
     sessions:      'admins/sessions',
     passwords:     'admins/passwords',
     registrations: 'admins/registrations'
@@ -16,10 +16,15 @@ end
   }
   end
 
-  resources :users, except: [:index,:create,:destroy,:new]
+  resources :users, except: [:create,:destroy,:new]
   resources :posts
   resources :pets
   root "homes#index"
   get "/about" => "homes#about"
+
+  namespace :admins do
+    root 'top#top'
+    resources :genres, only: [:index,:create,:edit,:update]
+  end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

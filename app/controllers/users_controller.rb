@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
-    before_action :authenticate_user!
+    before_action :authenticate_user!, except: [:index]
+    before_action :authenticate_admin!, only: [:index]
 
     def show
     end
@@ -8,6 +9,10 @@ class UsersController < ApplicationController
     end
 
     def update
+    end
+
+    def index
+        @users = User.all
     end
 
     # def confirm
