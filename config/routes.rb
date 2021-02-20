@@ -16,7 +16,11 @@ end
   }
   end
 
-  resources :users, except: [:create,:destroy,:new]
+  resources :users, except: [:create,:destroy,:new] do
+    member do
+      get 'pets' => 'users#pets_index'
+    end
+  end
   resources :posts
   resources :pets
   root "homes#index"

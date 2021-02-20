@@ -1,0 +1,56 @@
+<div class="container">
+    <div class="contain2">
+        <div class="hukidasi">
+            <h1>
+                <% if @user == current_user %>
+                    マイページ
+                <% else %>
+                    <%= @user.name %>さんのページ
+                <% end %>
+            </h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-2">
+            <p>ユーザー画像</p>
+            お名前&emsp;<%= @user.name %>
+            <p><%= link_to "編集ページへ", edit_user_path(@user.id) %></p>
+        </div>
+        <div class="col-10">
+            <% if @user.introduction == nil %>
+                <p>まだ紹介文がありません</p>
+            <% else %>
+                <%= @user.introduction %>
+            <% end %>
+        </div>
+    </div>
+    <div>
+        <% if @user == current_user %>
+            <p>うちの子</p>
+        <% else %>
+            <p><%= @user.name %>さんちの子</p>
+        <% end %>
+
+        <% if @pets.empty? %>
+            まだうちの子登録されていません
+            <p><%= link_to "うちの子登録ページへ", new_pet_path %></p>
+        <% else %>
+            <% @pets.each do |pet| %>
+                <%= pet.name %>
+                <%= pet.introduction %>
+                <%= pet.sex %>
+                <%= pet.age %>
+                <%= pet.genre_id.name %>
+            <% end %>
+        <% end %>
+
+        <p>投稿一覧</p>
+        <% if @posts.empty? %>
+            まだ投稿をされていません
+            <p><%= link_to "新規投稿ページへ", new_post_path %></p>
+        <% else %>
+            <%= @user.name %>さんちの子
+        <% end %>
+
+    </div>
+</div>

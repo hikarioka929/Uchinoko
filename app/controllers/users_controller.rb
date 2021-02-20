@@ -3,6 +3,9 @@ class UsersController < ApplicationController
     before_action :authenticate_admin!, only: [:index]
 
     def show
+        @user = User.find(params[:id])
+        @pets = @user.pets
+        @posts = @user.posts
     end
 
     def edit
@@ -21,8 +24,8 @@ class UsersController < ApplicationController
     # def cancel
     # end
 
-    # def pets_index
-    # end
+    def pets_index
+    end
 
     # def followings_index
     # end

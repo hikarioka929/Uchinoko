@@ -1,7 +1,7 @@
 class Pet < ApplicationRecord
     belongs_to :user
     has_many :posts
-    enum sex: {man:0, women:1}
+    enum sex: {man:"0", women:"1"}
 
     attachment :image
 

@@ -11,8 +11,9 @@ class PetsController < ApplicationController
 
     def create
         @pet = Pet.new(pet_params)
-        @pet.sex = params[:sex].to_i
+        @pet.sex = params[:sex].to_s
         @pet.user_id = current_user.id
+        byebug
         if @pet.save
             redirect_to pet_path(@pet.id)
         else
