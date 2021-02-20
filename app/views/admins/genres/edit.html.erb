@@ -1,0 +1,13 @@
+<div class="container contain2">
+    <div class="hukidasi">
+        <h1>ジャンル編集ページ</h1>
+
+        <%= form_with model: @genre, url: admins_genre_path(@genre), local: true do |f| %>
+
+        <%= f.text_field :name %>
+
+        <%= f.submit '名前変更' %>
+
+        <% end %>
+    </div>
+</div>
