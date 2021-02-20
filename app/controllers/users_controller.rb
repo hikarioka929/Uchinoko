@@ -9,9 +9,16 @@ class UsersController < ApplicationController
     end
 
     def edit
+        @user = User.find(params[:id])
     end
 
     def update
+        @user = User.find(params[:id])
+        if @user.update(user_params)
+            redirect_to user_path(@user)
+        else
+            render 'edit'
+        end
     end
 
     def index
@@ -25,6 +32,8 @@ class UsersController < ApplicationController
     # end
 
     def pets_index
+        @user = User.find(params[:id])
+        @pets = @user.pets
     end
 
     # def followings_index
@@ -32,4 +41,10 @@ class UsersController < ApplicationController
 
     # def followers_index
     # end
+
+    private
+
+    def user_params
+        params.require(:user).permit(:name,:introduction,:image)
+    end
 end

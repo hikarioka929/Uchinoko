@@ -1,1 +1,29 @@
-user_pets#index
+<div class="container contain2">
+    <div class="hukidasi">
+        <% if @user == current_user %>
+            <h1>あなたのうちの子一覧ページ</h1>
+        <% else %>
+            <h1><%= @user.name %>さんのうちの子一覧ページ</h1>
+        <% end %>
+
+        <table class="table">
+            <tbody>
+                <tr>
+                    <% @pets.each do |pet| %>
+
+                        <p>
+                            <%= link_to pet_path(pet) do %>
+                                <%= attachment_image_tag pet, :image, size: "250x250" %>
+                            <% end %>
+                        </p>
+                        <p><%= pet.name %></p>
+                        <p><%= pet.sex %></p>
+                        <p><%= pet.age %></p>
+                        <p><%= pet.introduction %></p>
+
+                    <% end %>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

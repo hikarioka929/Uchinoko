@@ -7,13 +7,13 @@ class PetsController < ApplicationController
     end
 
     def index
+        @pets = Pet.all
     end
 
     def create
         @pet = Pet.new(pet_params)
-        @pet.sex = params[:sex].to_s
+        @pet.sex = params[:pet][:sex].to_i
         @pet.user_id = current_user.id
-        byebug
         if @pet.save
             redirect_to pet_path(@pet.id)
         else
@@ -22,6 +22,7 @@ class PetsController < ApplicationController
     end
 
     def show
+        @pet = Pet.find(params[:id])
     end
 
     def edit
@@ -36,6 +37,6 @@ class PetsController < ApplicationController
     private
     
     def pet_params
-        params.require(:pet).permit(:genre_id,:name,:introduction,:sex,:age,:image)
+        params.require(:pet).permit(:genre_id,:name,:introduction,:age,:image)
     end
 end

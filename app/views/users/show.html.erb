@@ -11,12 +11,12 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-2">
-            <p>ユーザー画像</p>
+        <div class="col-4">
+            <p><%= attachment_image_tag @user, :image, size: "300x300" %></p>
             お名前&emsp;<%= @user.name %>
             <p><%= link_to "編集ページへ", edit_user_path(@user.id) %></p>
         </div>
-        <div class="col-10">
+        <div class="col-8">
             <% if @user.introduction == nil %>
                 <p>まだ紹介文がありません</p>
             <% else %>
@@ -24,32 +24,41 @@
             <% end %>
         </div>
     </div>
-    <div>
+    <div class="contain2 hukidasi">
         <% if @user == current_user %>
-            <p>うちの子</p>
+            <h1>うちの子</h1>
         <% else %>
-            <p><%= @user.name %>さんちの子</p>
+            <h1><%= @user.name %>さんちの子</h1>
         <% end %>
 
         <% if @pets.empty? %>
-            まだうちの子登録されていません
+            <p>まだうちの子登録されていません</p>
             <p><%= link_to "うちの子登録ページへ", new_pet_path %></p>
         <% else %>
+        <table class="table">
+            <tbody>
+            <tr>
             <% @pets.each do |pet| %>
-                <%= pet.name %>
-                <%= pet.introduction %>
-                <%= pet.sex %>
-                <%= pet.age %>
-                <%= pet.genre_id.name %>
+                <td><%= attachment_image_tag pet, :image, size: "100x100" %></td>
+                <td><%= pet.name %></td>
+                <td><%= pet.introduction %></td>
+                <td><%= pet.sex %></td>
+                <td><%= pet.age %></td>
+                <td><%= pet.genre_id %></td>
             <% end %>
+            </tr>
+            </tbody>
+        </table>
         <% end %>
 
-        <p>投稿一覧</p>
+        <h1>投稿一覧</h1>
         <% if @posts.empty? %>
-            まだ投稿をされていません
+            <p>まだ投稿をされていません</p>
             <p><%= link_to "新規投稿ページへ", new_post_path %></p>
         <% else %>
-            <%= @user.name %>さんちの子
+            <% @posts.each do |post| %>
+            <%= post.title %>
+            <% end %>
         <% end %>
 
     </div>

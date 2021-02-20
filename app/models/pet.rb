@@ -1,7 +1,7 @@
 class Pet < ApplicationRecord
     belongs_to :user
     has_many :posts
-    enum sex: {man:"0", women:"1"}
+    enum sex: {男の子:0, 女の子:1}
 
     attachment :image
 
@@ -9,6 +9,7 @@ class Pet < ApplicationRecord
         validates :name
         validates :sex
         validates :age
-        validates :image
+        validates :image_id
+        validates :genre_id
     end
 end

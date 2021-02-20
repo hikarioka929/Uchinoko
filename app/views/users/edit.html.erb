@@ -1,0 +1,22 @@
+<div class="container contain2">
+    <div class="hukidasi">
+        <h1>ユーザー編集ページ</h1>
+
+        <%= form_with model: @user, local: true do |f|  %>
+
+        <div class="field">
+            お名前<%= f.text_field :name %>
+        </div>
+
+        <div class="field">
+            プロフィール画像<%= f.attachment_field :image %>
+        </div>
+
+        <div class="field">
+            紹介文<%= f.text_area :introduction %>
+        </div>
+
+        <%= f.submit "更新する" %>
+        <% end %>
+    </div>
+</div>
