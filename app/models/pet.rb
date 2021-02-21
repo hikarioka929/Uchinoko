@@ -1,5 +1,6 @@
 class Pet < ApplicationRecord
     belongs_to :user
+    belongs_to :genre
     has_many :posts
     enum sex: {男の子:0, 女の子:1}
 

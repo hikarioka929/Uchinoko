@@ -1,0 +1,27 @@
+<div class="container contain2">
+    <div class="hukidasi">
+        <h1>新規投稿ページ</h1>
+
+        <%= form_with model: @post, local: true do |f| %>
+
+        <div class="field">
+            タイトル<%= f.text_field :title %>
+        </div>
+
+        <div class="field">
+            本文<%= f.text_area :body %>
+        </div>
+
+        <div class="field">
+            写真<%= f.attachment_field :image %>
+        </div>
+
+        <div class="field">
+            どのうちの子？<%= f.collection_select :pet_id, current_user.pets, :id, :name, :prompt => "選択してください" %>
+        </div>
+
+        <%= f.submit "投稿を更新" %>
+
+        <% end %>
+    </div>
+</div>

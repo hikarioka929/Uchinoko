@@ -1,1 +1,19 @@
-posts#show
+<div class="container contain2">
+    <div class="hukidasi">
+        <h1>投稿詳細ページ</h1>
+
+        <div class="row">
+            <div class="col-4">
+                <%= attachment_image_tag @user, :image, size: "100x100" %>
+                <%= @user.name %>&emsp;さんの投稿
+                <%= attachment_image_tag @post, :image, size: "300x300" %>
+            </div>
+            <div class="col-8">
+                <%= attachment_image_tag @pet, :image, size: "100x100" %>
+                <%= @pet.name %>
+                <p>タイトル：<%= @post.title %></p>
+                <p>本文：<%= @post.body %></p>
+            </div>
+        </div>
+    </div>
+</div>

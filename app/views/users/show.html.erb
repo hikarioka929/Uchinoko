@@ -44,7 +44,7 @@
                 <td><%= pet.introduction %></td>
                 <td><%= pet.sex %></td>
                 <td><%= pet.age %></td>
-                <td><%= pet.genre_id %></td>
+                <td><%= pet.genre.name %></td>
             <% end %>
             </tr>
             </tbody>
@@ -56,9 +56,24 @@
             <p>まだ投稿をされていません</p>
             <p><%= link_to "新規投稿ページへ", new_post_path %></p>
         <% else %>
+        <div>
             <% @posts.each do |post| %>
-            <%= post.title %>
+            <div class="test">
+                <p>
+                    <%= link_to user_path(post.user) do %>
+                        <%= attachment_image_tag post.user, :image, size: "50x50" %>
+                        <%= post.user.name %>
+                    <% end %>
+                </p>
+                <span>
+                    <%= link_to post_path(post) do %>
+                    <%= attachment_image_tag post, :image, size: "200x200" %>
+                </span>
+                <p><%= post.title %></p>
+                <% end %>
+                </div>
             <% end %>
+        </div>
         <% end %>
 
     </div>

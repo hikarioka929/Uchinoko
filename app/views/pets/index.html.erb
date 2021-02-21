@@ -24,7 +24,7 @@
                         <td><%= pet.introduction %></td>
                         <td><%= pet.sex %></td>
                         <td><%= pet.age %></td>
-                        <td><%= pet.genre_id %></td>
+                        <td><%= pet.genre.name %></td>
                         <td>
                             <%= link_to user_path(pet.user) do %>
                                 <%= attachment_image_tag pet.user, :image, size: "50x50" %>

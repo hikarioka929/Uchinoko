@@ -2,4 +2,16 @@
     <div class="hukidasi">
         <h1><%= @pet.name %>のページ</h1>
     </div>
+        <div class="row">
+        <div class="col-4">
+            <p><%= attachment_image_tag @pet, :image, size: "300x300" %></p>
+            <p>お名前&emsp;<%= @pet.name %></p>
+            <p><%= @pet.sex %></p>
+            <p><%= @pet.age %></p>
+            <p><%= link_to "編集ページへ", edit_pet_path(@pet.id) %></p>
+        </div>
+        <div class="col-8">
+            <%= @pet.introduction %>
+        </div>
+    </div
 </div>
