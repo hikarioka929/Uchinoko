@@ -1,7 +1,7 @@
 class Pet < ApplicationRecord
     belongs_to :user
     belongs_to :genre
-    has_many :posts
+    has_many :posts, dependent: :destroy
     enum sex: {男の子:0, 女の子:1}
 
     attachment :image

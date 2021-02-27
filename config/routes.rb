@@ -21,7 +21,9 @@ end
       get 'pets' => 'users#pets_index'
     end
   end
-  resources :posts
+  resources :posts do
+    resources :post_comments, only: [:create, :destroy]
+  end
   resources :pets
   root "homes#index"
   get "/about" => "homes#about"
