@@ -10,7 +10,7 @@ class Pet < ApplicationRecord
         validates :name
         validates :sex
         validates :age
-        validates :image_id
+        validates :image
         validates :genre_id
     end
 end
