@@ -1,6 +1,6 @@
 class PetsController < ApplicationController
 
-    before_action :authenticate_user!
+    before_action :authenticate_user!, except: [:index]
 
     def new
         @pet = Pet.new
@@ -44,6 +44,6 @@ class PetsController < ApplicationController
     private
     
     def pet_params
-        params.require(:pet).permit(:genre_id,:name,:introduction,:age,:image)
+        params.require(:pet).permit(:genre_id,:name,:introduction,:age,:image,:sex)
     end
 end
