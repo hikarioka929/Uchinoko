@@ -1,0 +1,510 @@
+Started GET "/posts" for ::1 at 2021-03-02 14:33:05 +0900
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:5
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:8
+  Rendered posts/index.html.erb within layouts/application (Duration: 25.4ms | Allocations: 21866)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:40
+Completed 200 OK in 182ms (Views: 167.9ms | ActiveRecord: 1.2ms | Allocations: 52521)
+
+
+Started GET "/users/1" for ::1 at 2021-03-02 14:33:08 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:6:in `show'
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."followee_id" WHERE "relationships"."follower_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["follower_id", 2], ["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:25:in `following?'
+  [1m[36mPet Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "pets" WHERE "pets"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:47
+  [1m[36mPet Load (0.1ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/users/show.html.erb:54
+  [1m[36mGenre Load (0.1ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:60
+  [1m[36mPost Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "posts" WHERE "posts"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:68
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/users/show.html.erb:73
+  Rendered users/show.html.erb within layouts/application (Duration: 28.9ms | Allocations: 25041)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 53ms (Views: 40.9ms | ActiveRecord: 1.8ms | Allocations: 43413)
+
+
+Started POST "/users/1/relationships" for ::1 at 2021-03-02 14:33:10 +0900
+Processing by RelationshipsController#create as HTML
+  Parameters: {"authenticity_token"=>"b+2cEuMWOlOyEf9gTkw2KzreG0kJcLVH9yMY+AKSHjoviraeeoaNMAj5vtnSpxMXvdjt9D4LrHYPZ4nEHXqxMA==", "user_id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/relationships_controller.rb:6:in `create'
+  [1m[36mRelationship Load (0.1ms)[0m  [1m[34mSELECT "relationships".* FROM "relationships" WHERE "relationships"."follower_id" = ? AND "relationships"."followee_id" = ? AND "relationships"."follower_id" = ? LIMIT ?[0m  [["follower_id", 2], ["followee_id", 1], ["follower_id", 2], ["LIMIT", 1]]
+  ↳ app/models/user.rb:30:in `follow'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/user.rb:30:in `follow'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/user.rb:30:in `follow'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:30:in `follow'
+  [1m[36mRelationship Create (0.5ms)[0m  [1m[32mINSERT INTO "relationships" ("follower_id", "followee_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["follower_id", 2], ["followee_id", 1], ["created_at", "2021-03-02 05:33:10.474373"], ["updated_at", "2021-03-02 05:33:10.474373"]]
+  ↳ app/models/user.rb:30:in `follow'
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/user.rb:30:in `follow'
+Redirected to http://localhost:3000/users/1
+Completed 302 Found in 22ms (ActiveRecord: 1.8ms | Allocations: 13864)
+
+
+Started GET "/users/1" for ::1 at 2021-03-02 14:33:10 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:6:in `show'
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."followee_id" WHERE "relationships"."follower_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["follower_id", 2], ["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:25:in `following?'
+  [1m[36mPet Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "pets" WHERE "pets"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:47
+  [1m[36mPet Load (0.1ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/users/show.html.erb:54
+  [1m[36mGenre Load (0.1ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:60
+  [1m[36mPost Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "posts" WHERE "posts"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:68
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/users/show.html.erb:73
+  Rendered users/show.html.erb within layouts/application (Duration: 6.7ms | Allocations: 5750)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 23ms (Views: 19.1ms | ActiveRecord: 0.7ms | Allocations: 18400)
+
+
+Started GET "/users/1" for ::1 at 2021-03-02 14:33:48 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:6:in `show'
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."followee_id" WHERE "relationships"."follower_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["follower_id", 2], ["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:25:in `following?'
+  [1m[36mPet Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "pets" WHERE "pets"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:47
+  [1m[36mPet Load (0.1ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/users/show.html.erb:54
+  [1m[36mGenre Load (0.1ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:60
+  [1m[36mPost Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "posts" WHERE "posts"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:68
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/users/show.html.erb:73
+  Rendered users/show.html.erb within layouts/application (Duration: 10.4ms | Allocations: 6702)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 30ms (Views: 25.2ms | ActiveRecord: 0.9ms | Allocations: 21033)
+
+
+Started DELETE "/users/1/relationships" for ::1 at 2021-03-02 14:33:54 +0900
+Processing by RelationshipsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"FPGLX9mAnc58wdkNmAR97ChDD/gGyCFZg0BqFv0+4/1UlqHTQBAqrcYpmLQE71jQr0X5RTGzOGh7BPsq4tZM9w==", "user_id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/relationships_controller.rb:12:in `destroy'
+  [1m[36mRelationship Load (0.1ms)[0m  [1m[34mSELECT "relationships".* FROM "relationships" WHERE "relationships"."follower_id" = ? AND "relationships"."followee_id" = ? AND "relationships"."follower_id" = ? LIMIT ?[0m  [["follower_id", 2], ["followee_id", 1], ["follower_id", 2], ["LIMIT", 1]]
+  ↳ app/models/user.rb:36:in `unfollow'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/user.rb:37:in `unfollow'
+  [1m[36mRelationship Destroy (0.3ms)[0m  [1m[31mDELETE FROM "relationships" WHERE "relationships"."id" = ?[0m  [["id", 3]]
+  ↳ app/models/user.rb:37:in `unfollow'
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/user.rb:37:in `unfollow'
+Redirected to http://localhost:3000/users/1
+Completed 302 Found in 9ms (ActiveRecord: 1.2ms | Allocations: 6224)
+
+
+Started GET "/users/1" for ::1 at 2021-03-02 14:33:54 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:6:in `show'
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."followee_id" WHERE "relationships"."follower_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["follower_id", 2], ["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:25:in `following?'
+  [1m[36mPet Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "pets" WHERE "pets"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:47
+  [1m[36mPet Load (0.1ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/users/show.html.erb:54
+  [1m[36mGenre Load (0.1ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:60
+  [1m[36mPost Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "posts" WHERE "posts"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:68
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/users/show.html.erb:73
+  Rendered users/show.html.erb within layouts/application (Duration: 9.9ms | Allocations: 5740)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 27ms (Views: 22.9ms | ActiveRecord: 0.8ms | Allocations: 18389)
+
+
+Started POST "/users/1/relationships" for ::1 at 2021-03-02 14:33:56 +0900
+Processing by RelationshipsController#create as HTML
+  Parameters: {"authenticity_token"=>"Musrpt1MbMlcnyvQ3WM+VnXVJD2OTeSd6tEBrZBaS6NyjAEqRNzbquZ3amlBiBtq8tPSgLk2/awSlZCRj7LkqQ==", "user_id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/relationships_controller.rb:6:in `create'
+  [1m[36mRelationship Load (0.1ms)[0m  [1m[34mSELECT "relationships".* FROM "relationships" WHERE "relationships"."follower_id" = ? AND "relationships"."followee_id" = ? AND "relationships"."follower_id" = ? LIMIT ?[0m  [["follower_id", 2], ["followee_id", 1], ["follower_id", 2], ["LIMIT", 1]]
+  ↳ app/models/user.rb:30:in `follow'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/user.rb:30:in `follow'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/user.rb:30:in `follow'
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:30:in `follow'
+  [1m[36mRelationship Create (0.3ms)[0m  [1m[32mINSERT INTO "relationships" ("follower_id", "followee_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["follower_id", 2], ["followee_id", 1], ["created_at", "2021-03-02 05:33:56.403260"], ["updated_at", "2021-03-02 05:33:56.403260"]]
+  ↳ app/models/user.rb:30:in `follow'
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/user.rb:30:in `follow'
+Redirected to http://localhost:3000/users/1
+Completed 302 Found in 21ms (ActiveRecord: 1.4ms | Allocations: 9632)
+
+
+Started GET "/users/1" for ::1 at 2021-03-02 14:33:56 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:6:in `show'
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."followee_id" WHERE "relationships"."follower_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["follower_id", 2], ["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:25:in `following?'
+  [1m[36mPet Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "pets" WHERE "pets"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:47
+  [1m[36mPet Load (0.1ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/users/show.html.erb:54
+  [1m[36mGenre Load (0.1ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:60
+  [1m[36mPost Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "posts" WHERE "posts"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:68
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/users/show.html.erb:73
+  Rendered users/show.html.erb within layouts/application (Duration: 8.0ms | Allocations: 9240)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 25ms (Views: 21.4ms | ActiveRecord: 0.7ms | Allocations: 26082)
+
+
+Started GET "/users/1" for ::1 at 2021-03-02 14:34:15 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:6:in `show'
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."followee_id" WHERE "relationships"."follower_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["follower_id", 2], ["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:25:in `following?'
+  [1m[36mPet Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "pets" WHERE "pets"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:47
+  [1m[36mPet Load (0.1ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/users/show.html.erb:54
+  [1m[36mGenre Load (0.1ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:60
+  [1m[36mPost Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "posts" WHERE "posts"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:68
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/users/show.html.erb:73
+  Rendered users/show.html.erb within layouts/application (Duration: 13.1ms | Allocations: 6701)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 33ms (Views: 29.5ms | ActiveRecord: 0.8ms | Allocations: 21003)
+
+
+Started DELETE "/users/1/relationships" for ::1 at 2021-03-02 14:34:16 +0900
+Processing by RelationshipsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"2kga3jwmLU0I5RtlzGfrCe7/89AyGZS1CbDtiompTV2aLzBSpbaaLrINWtxQjM41afkFbQVijYTx9Hy2lkHiVw==", "user_id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/relationships_controller.rb:12:in `destroy'
+  [1m[36mRelationship Load (0.1ms)[0m  [1m[34mSELECT "relationships".* FROM "relationships" WHERE "relationships"."follower_id" = ? AND "relationships"."followee_id" = ? AND "relationships"."follower_id" = ? LIMIT ?[0m  [["follower_id", 2], ["followee_id", 1], ["follower_id", 2], ["LIMIT", 1]]
+  ↳ app/models/user.rb:36:in `unfollow'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/user.rb:37:in `unfollow'
+  [1m[36mRelationship Destroy (0.3ms)[0m  [1m[31mDELETE FROM "relationships" WHERE "relationships"."id" = ?[0m  [["id", 4]]
+  ↳ app/models/user.rb:37:in `unfollow'
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/user.rb:37:in `unfollow'
+Redirected to http://localhost:3000/users/1
+Completed 302 Found in 7ms (ActiveRecord: 1.3ms | Allocations: 6186)
+
+
+Started GET "/users/1" for ::1 at 2021-03-02 14:34:16 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:6:in `show'
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."followee_id" WHERE "relationships"."follower_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["follower_id", 2], ["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:25:in `following?'
+  [1m[36mPet Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "pets" WHERE "pets"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:47
+  [1m[36mPet Load (0.1ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/users/show.html.erb:54
+  [1m[36mGenre Load (0.1ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:60
+  [1m[36mPost Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "posts" WHERE "posts"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:68
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/users/show.html.erb:73
+  Rendered users/show.html.erb within layouts/application (Duration: 6.2ms | Allocations: 5740)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 22ms (Views: 17.8ms | ActiveRecord: 0.7ms | Allocations: 18408)
+
+
+Started GET "/users/1" for ::1 at 2021-03-02 14:34:22 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:6:in `show'
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."followee_id" WHERE "relationships"."follower_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["follower_id", 2], ["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:25:in `following?'
+  [1m[36mPet Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "pets" WHERE "pets"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:47
+  [1m[36mPet Load (0.1ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/users/show.html.erb:54
+  [1m[36mGenre Load (0.1ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:60
+  [1m[36mPost Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "posts" WHERE "posts"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:68
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/users/show.html.erb:73
+  Rendered users/show.html.erb within layouts/application (Duration: 10.7ms | Allocations: 6697)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 30ms (Views: 25.3ms | ActiveRecord: 0.9ms | Allocations: 21015)
+
+
+Started POST "/users/1/relationships" for ::1 at 2021-03-02 14:34:23 +0900
+Processing by RelationshipsController#create as HTML
+  Parameters: {"authenticity_token"=>"BhFl1N9iSoEeRFTfpGww+unUfKXG/fEeKJoPcILuNfZGdk9YRvL94qSsFWY4hxXGbtKKGPGG6C/Q3p5MnQaa/A==", "user_id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/relationships_controller.rb:6:in `create'
+  [1m[36mRelationship Load (0.1ms)[0m  [1m[34mSELECT "relationships".* FROM "relationships" WHERE "relationships"."follower_id" = ? AND "relationships"."followee_id" = ? AND "relationships"."follower_id" = ? LIMIT ?[0m  [["follower_id", 2], ["followee_id", 1], ["follower_id", 2], ["LIMIT", 1]]
+  ↳ app/models/user.rb:30:in `follow'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/user.rb:30:in `follow'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/user.rb:30:in `follow'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:30:in `follow'
+  [1m[36mRelationship Create (0.4ms)[0m  [1m[32mINSERT INTO "relationships" ("follower_id", "followee_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["follower_id", 2], ["followee_id", 1], ["created_at", "2021-03-02 05:34:23.647869"], ["updated_at", "2021-03-02 05:34:23.647869"]]
+  ↳ app/models/user.rb:30:in `follow'
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/user.rb:30:in `follow'
+Redirected to http://localhost:3000/users/1
+Completed 302 Found in 11ms (ActiveRecord: 1.7ms | Allocations: 9600)
+
+
+Started GET "/users/1" for ::1 at 2021-03-02 14:34:23 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:6:in `show'
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."followee_id" WHERE "relationships"."follower_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["follower_id", 2], ["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:25:in `following?'
+  [1m[36mPet Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "pets" WHERE "pets"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:47
+  [1m[36mPet Load (0.1ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/users/show.html.erb:54
+  [1m[36mGenre Load (0.1ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:60
+  [1m[36mPost Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "posts" WHERE "posts"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:68
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/users/show.html.erb:73
+  Rendered users/show.html.erb within layouts/application (Duration: 6.9ms | Allocations: 5745)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 22ms (Views: 18.2ms | ActiveRecord: 0.9ms | Allocations: 18389)
+
+
+Started DELETE "/users/1/relationships" for ::1 at 2021-03-02 14:34:24 +0900
+Processing by RelationshipsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"0btrhOZk38qD3qg4i3ENmCCI6bQ2HsZPfXuZU3V/h22R3EEIf/RoqTk26YEXmiikp44fCQFl336FPwhvapcoZw==", "user_id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/relationships_controller.rb:12:in `destroy'
+  [1m[36mRelationship Load (0.1ms)[0m  [1m[34mSELECT "relationships".* FROM "relationships" WHERE "relationships"."follower_id" = ? AND "relationships"."followee_id" = ? AND "relationships"."follower_id" = ? LIMIT ?[0m  [["follower_id", 2], ["followee_id", 1], ["follower_id", 2], ["LIMIT", 1]]
+  ↳ app/models/user.rb:36:in `unfollow'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/user.rb:37:in `unfollow'
+  [1m[36mRelationship Destroy (0.7ms)[0m  [1m[31mDELETE FROM "relationships" WHERE "relationships"."id" = ?[0m  [["id", 5]]
+  ↳ app/models/user.rb:37:in `unfollow'
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/user.rb:37:in `unfollow'
+Redirected to http://localhost:3000/users/1
+Completed 302 Found in 7ms (ActiveRecord: 1.5ms | Allocations: 6176)
+
+
+Started GET "/users/1" for ::1 at 2021-03-02 14:34:24 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:6:in `show'
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."followee_id" WHERE "relationships"."follower_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["follower_id", 2], ["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:25:in `following?'
+  [1m[36mPet Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "pets" WHERE "pets"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:47
+  [1m[36mPet Load (0.1ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/users/show.html.erb:54
+  [1m[36mGenre Load (0.1ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:60
+  [1m[36mPost Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "posts" WHERE "posts"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:68
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/users/show.html.erb:73
+  Rendered users/show.html.erb within layouts/application (Duration: 6.8ms | Allocations: 5738)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 23ms (Views: 19.0ms | ActiveRecord: 0.8ms | Allocations: 18395)
+
+
+Started POST "/users/1/relationships" for ::1 at 2021-03-02 14:34:25 +0900
+Processing by RelationshipsController#create as HTML
+  Parameters: {"authenticity_token"=>"t4FB2Q+q9s442Dre8NGCEasY1oefXwRcxYso2op6Kd335mtVljpBrYIwe2dsOqctLB4gOqgkHW09z7nmlZKG1w==", "user_id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/relationships_controller.rb:6:in `create'
+  [1m[36mRelationship Load (0.1ms)[0m  [1m[34mSELECT "relationships".* FROM "relationships" WHERE "relationships"."follower_id" = ? AND "relationships"."followee_id" = ? AND "relationships"."follower_id" = ? LIMIT ?[0m  [["follower_id", 2], ["followee_id", 1], ["follower_id", 2], ["LIMIT", 1]]
+  ↳ app/models/user.rb:30:in `follow'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/user.rb:30:in `follow'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/user.rb:30:in `follow'
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:30:in `follow'
+  [1m[36mRelationship Create (0.4ms)[0m  [1m[32mINSERT INTO "relationships" ("follower_id", "followee_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["follower_id", 2], ["followee_id", 1], ["created_at", "2021-03-02 05:34:25.330186"], ["updated_at", "2021-03-02 05:34:25.330186"]]
+  ↳ app/models/user.rb:30:in `follow'
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/user.rb:30:in `follow'
+Redirected to http://localhost:3000/users/1
+Completed 302 Found in 12ms (ActiveRecord: 1.6ms | Allocations: 9626)
+
+
+Started GET "/users/1" for ::1 at 2021-03-02 14:34:25 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:6:in `show'
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."followee_id" WHERE "relationships"."follower_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["follower_id", 2], ["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:25:in `following?'
+  [1m[36mPet Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "pets" WHERE "pets"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:47
+  [1m[36mPet Load (0.1ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/users/show.html.erb:54
+  [1m[36mGenre Load (0.1ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:60
+  [1m[36mPost Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "posts" WHERE "posts"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:68
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/users/show.html.erb:73
+  Rendered users/show.html.erb within layouts/application (Duration: 7.0ms | Allocations: 5747)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 22ms (Views: 18.5ms | ActiveRecord: 0.8ms | Allocations: 18384)
+
+
+Started DELETE "/users/1/relationships" for ::1 at 2021-03-02 14:34:26 +0900
+Processing by RelationshipsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"z4LuOqPJKmJf6+jYyCsD7lqdQ2PdNYlTehvdObP2kgOP5cS2OlmdAeUDqWFUwCbS3Zu13upOkGKCX0wFrB49CQ==", "user_id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/relationships_controller.rb:12:in `destroy'
+  [1m[36mRelationship Load (0.1ms)[0m  [1m[34mSELECT "relationships".* FROM "relationships" WHERE "relationships"."follower_id" = ? AND "relationships"."followee_id" = ? AND "relationships"."follower_id" = ? LIMIT ?[0m  [["follower_id", 2], ["followee_id", 1], ["follower_id", 2], ["LIMIT", 1]]
+  ↳ app/models/user.rb:36:in `unfollow'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/user.rb:37:in `unfollow'
+  [1m[36mRelationship Destroy (0.6ms)[0m  [1m[31mDELETE FROM "relationships" WHERE "relationships"."id" = ?[0m  [["id", 6]]
+  ↳ app/models/user.rb:37:in `unfollow'
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/user.rb:37:in `unfollow'
+Redirected to http://localhost:3000/users/1
+Completed 302 Found in 18ms (ActiveRecord: 1.9ms | Allocations: 14253)
+
+
+Started GET "/users/1" for ::1 at 2021-03-02 14:34:26 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:6:in `show'
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."followee_id" WHERE "relationships"."follower_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["follower_id", 2], ["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:25:in `following?'
+  [1m[36mPet Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "pets" WHERE "pets"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:47
+  [1m[36mPet Load (0.1ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/users/show.html.erb:54
+  [1m[36mGenre Load (0.1ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:60
+  [1m[36mPost Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "posts" WHERE "posts"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:68
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/users/show.html.erb:73
+  Rendered users/show.html.erb within layouts/application (Duration: 7.9ms | Allocations: 5738)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 23ms (Views: 19.4ms | ActiveRecord: 0.9ms | Allocations: 18386)
+
+
+Started POST "/users/1/relationships" for ::1 at 2021-03-02 14:34:26 +0900
+Processing by RelationshipsController#create as HTML
+  Parameters: {"authenticity_token"=>"UUojzSnwhYXorhH12lBLMHOkHAvaanFilTHHd6dlLCQRLQlBsGAy5lJGUExGu24M9KLqtu0RaFNtdVZLuI2DLg==", "user_id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/relationships_controller.rb:6:in `create'
+  [1m[36mRelationship Load (0.1ms)[0m  [1m[34mSELECT "relationships".* FROM "relationships" WHERE "relationships"."follower_id" = ? AND "relationships"."followee_id" = ? AND "relationships"."follower_id" = ? LIMIT ?[0m  [["follower_id", 2], ["followee_id", 1], ["follower_id", 2], ["LIMIT", 1]]
+  ↳ app/models/user.rb:30:in `follow'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/user.rb:30:in `follow'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/user.rb:30:in `follow'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:30:in `follow'
+  [1m[36mRelationship Create (0.4ms)[0m  [1m[32mINSERT INTO "relationships" ("follower_id", "followee_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["follower_id", 2], ["followee_id", 1], ["created_at", "2021-03-02 05:34:26.745634"], ["updated_at", "2021-03-02 05:34:26.745634"]]
+  ↳ app/models/user.rb:30:in `follow'
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/user.rb:30:in `follow'
+Redirected to http://localhost:3000/users/1
+Completed 302 Found in 11ms (ActiveRecord: 1.6ms | Allocations: 9596)
+
+
+Started GET "/users/1" for ::1 at 2021-03-02 14:34:26 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:6:in `show'
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."followee_id" WHERE "relationships"."follower_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["follower_id", 2], ["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:25:in `following?'
+  [1m[36mPet Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "pets" WHERE "pets"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:47
+  [1m[36mPet Load (0.1ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/users/show.html.erb:54
+  [1m[36mGenre Load (0.1ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:60
+  [1m[36mPost Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "posts" WHERE "posts"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:68
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/users/show.html.erb:73
+  Rendered users/show.html.erb within layouts/application (Duration: 9.4ms | Allocations: 10040)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 26ms (Views: 22.2ms | ActiveRecord: 0.8ms | Allocations: 26064)
+
+
