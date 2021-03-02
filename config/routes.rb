@@ -19,7 +19,10 @@ end
   resources :users, except: [:create,:destroy,:new] do
     member do
       get 'pets' => 'users#pets_index'
+      get 'followers'
+      get 'followings'
     end
+    resource :relationships, only: [:create,:destroy]
   end
   resources :posts do
     resources :post_comments, only: [:create, :destroy]

@@ -36,11 +36,11 @@ class UsersController < ApplicationController
         @pets = @user.pets
     end
 
-    # def followings_index
-    # end
+    def followings
+    end
 
-    # def followers_index
-    # end
+    def followers
+    end
 
     private
 

@@ -4574,3 +4574,1522 @@ Processing by PostsController#show as HTML
 Completed 200 OK in 23ms (Views: 18.6ms | ActiveRecord: 0.8ms | Allocations: 18810)
 
 
+Started GET "/posts" for ::1 at 2021-02-28 08:21:53 +0900
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:5
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:8
+  Rendered posts/index.html.erb within layouts/application (Duration: 28.6ms | Allocations: 21865)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:40
+Completed 200 OK in 174ms (Views: 160.7ms | ActiveRecord: 1.2ms | Allocations: 52101)
+
+
+Started GET "/posts" for ::1 at 2021-02-28 08:21:56 +0900
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:5
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:8
+  Rendered posts/index.html.erb within layouts/application (Duration: 2.9ms | Allocations: 1898)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:40
+Completed 200 OK in 18ms (Views: 16.7ms | ActiveRecord: 0.3ms | Allocations: 13345)
+
+
+Started GET "/pets" for ::1 at 2021-02-28 08:21:57 +0900
+Processing by PetsController#index as HTML
+  Rendering pets/index.html.erb within layouts/application
+  [1m[36mPet Load (0.2ms)[0m  [1m[34mSELECT "pets".* FROM "pets"[0m
+  ↳ app/views/pets/index.html.erb:17
+  [1m[36mGenre Load (0.1ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/pets/index.html.erb:27
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/pets/index.html.erb:29
+  Rendered pets/index.html.erb within layouts/application (Duration: 19.5ms | Allocations: 16180)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:40
+Completed 200 OK in 39ms (Views: 33.4ms | ActiveRecord: 1.3ms | Allocations: 30513)
+
+
+Started GET "/posts" for ::1 at 2021-02-28 08:21:58 +0900
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:5
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:8
+  Rendered posts/index.html.erb within layouts/application (Duration: 2.7ms | Allocations: 1904)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:40
+Completed 200 OK in 18ms (Views: 16.8ms | ActiveRecord: 0.4ms | Allocations: 13371)
+
+
+Started GET "/posts/1" for ::1 at 2021-02-28 08:21:59 +0900
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:25:in `show'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:26:in `show'
+  [1m[36mPet Load (0.1ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:27:in `show'
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:11
+  [1m[36mFavorite Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "favorites" WHERE "favorites"."post_id" = ? AND "favorites"."user_id" = ? LIMIT ?[0m  [["post_id", 1], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/models/post.rb:17:in `favorited_by?'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."post_id" = ?[0m  [["post_id", 1]]
+  ↳ app/views/posts/show.html.erb:13
+  [1m[36mPostComment Load (0.3ms)[0m  [1m[34mSELECT "post_comments".* FROM "post_comments" WHERE "post_comments"."post_id" = ?[0m  [["post_id", 1]]
+  ↳ app/views/posts/show.html.erb:35
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:37
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:37
+  Rendered posts/show.html.erb within layouts/application (Duration: 18.9ms | Allocations: 13064)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 45ms (Views: 31.7ms | ActiveRecord: 1.7ms | Allocations: 31799)
+
+
+Started GET "/pets" for ::1 at 2021-02-28 08:22:02 +0900
+Processing by PetsController#index as HTML
+  Rendering pets/index.html.erb within layouts/application
+  [1m[36mPet Load (0.1ms)[0m  [1m[34mSELECT "pets".* FROM "pets"[0m
+  ↳ app/views/pets/index.html.erb:17
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/pets/index.html.erb:27
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/pets/index.html.erb:29
+  Rendered pets/index.html.erb within layouts/application (Duration: 4.5ms | Allocations: 2680)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:40
+Completed 200 OK in 21ms (Views: 19.1ms | ActiveRecord: 0.5ms | Allocations: 14136)
+
+
+Started GET "/users/1/pets" for ::1 at 2021-02-28 08:22:03 +0900
+Processing by UsersController#pets_index as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:35:in `pets_index'
+  Rendering users/pets_index.html.erb within layouts/application
+  [1m[36mPet Load (0.2ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/users/pets_index.html.erb:12
+  Rendered users/pets_index.html.erb within layouts/application (Duration: 3.1ms | Allocations: 1561)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 24ms (Views: 18.6ms | ActiveRecord: 0.5ms | Allocations: 15444)
+
+
+Started GET "/users/1" for ::1 at 2021-02-28 08:22:05 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:6:in `show'
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mPet Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "pets" WHERE "pets"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:34
+  [1m[36mPet Load (0.1ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/users/show.html.erb:41
+  [1m[36mGenre Load (0.1ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:47
+  [1m[36mPost Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "posts" WHERE "posts"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:55
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/users/show.html.erb:60
+  Rendered users/show.html.erb within layouts/application (Duration: 10.7ms | Allocations: 5792)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 31ms (Views: 26.1ms | ActiveRecord: 0.9ms | Allocations: 18864)
+
+
+Started GET "/" for ::1 at 2021-02-28 08:22:09 +0900
+Processing by HomesController#index as HTML
+  Rendering homes/index.html.erb within layouts/application
+  Rendered homes/index.html.erb within layouts/application (Duration: 1.6ms | Allocations: 171)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:40
+Completed 200 OK in 21ms (Views: 19.1ms | ActiveRecord: 0.1ms | Allocations: 12412)
+
+
+Started GET "/about" for ::1 at 2021-02-28 08:22:11 +0900
+Processing by HomesController#about as HTML
+  Rendering homes/about.html.erb within layouts/application
+  Rendered homes/about.html.erb within layouts/application (Duration: 1.4ms | Allocations: 102)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:40
+Completed 200 OK in 21ms (Views: 19.3ms | ActiveRecord: 0.1ms | Allocations: 11687)
+
+
+Started GET "/posts" for ::1 at 2021-02-28 08:22:15 +0900
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:5
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:8
+  Rendered posts/index.html.erb within layouts/application (Duration: 2.9ms | Allocations: 1893)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:40
+Completed 200 OK in 21ms (Views: 19.6ms | ActiveRecord: 0.3ms | Allocations: 13340)
+
+
+Started GET "/pets" for ::1 at 2021-02-28 08:22:16 +0900
+Processing by PetsController#index as HTML
+  Rendering pets/index.html.erb within layouts/application
+  [1m[36mPet Load (0.1ms)[0m  [1m[34mSELECT "pets".* FROM "pets"[0m
+  ↳ app/views/pets/index.html.erb:17
+  [1m[36mGenre Load (0.1ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/pets/index.html.erb:27
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/pets/index.html.erb:29
+  Rendered pets/index.html.erb within layouts/application (Duration: 4.4ms | Allocations: 2670)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:40
+Completed 200 OK in 23ms (Views: 20.9ms | ActiveRecord: 0.6ms | Allocations: 14119)
+
+
+Started GET "/users/1/pets" for ::1 at 2021-02-28 08:22:17 +0900
+Processing by UsersController#pets_index as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:35:in `pets_index'
+  Rendering users/pets_index.html.erb within layouts/application
+  [1m[36mPet Load (0.1ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/users/pets_index.html.erb:12
+  Rendered users/pets_index.html.erb within layouts/application (Duration: 2.6ms | Allocations: 1030)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 31ms (Views: 27.1ms | ActiveRecord: 0.3ms | Allocations: 13597)
+
+
+Started GET "/pets" for ::1 at 2021-02-28 08:22:18 +0900
+Processing by PetsController#index as HTML
+  Rendering pets/index.html.erb within layouts/application
+  [1m[36mPet Load (0.1ms)[0m  [1m[34mSELECT "pets".* FROM "pets"[0m
+  ↳ app/views/pets/index.html.erb:17
+  [1m[36mGenre Load (0.1ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/pets/index.html.erb:27
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/pets/index.html.erb:29
+  Rendered pets/index.html.erb within layouts/application (Duration: 3.7ms | Allocations: 2666)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:40
+Completed 200 OK in 18ms (Views: 16.9ms | ActiveRecord: 0.4ms | Allocations: 14097)
+
+
+Started GET "/users/1" for ::1 at 2021-02-28 08:22:19 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:6:in `show'
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mPet Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "pets" WHERE "pets"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:34
+  [1m[36mPet Load (0.1ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/users/show.html.erb:41
+  [1m[36mGenre Load (0.1ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:47
+  [1m[36mPost Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "posts" WHERE "posts"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:55
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/users/show.html.erb:60
+  Rendered users/show.html.erb within layouts/application (Duration: 6.4ms | Allocations: 4671)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 23ms (Views: 19.2ms | ActiveRecord: 0.7ms | Allocations: 17249)
+
+
+Started GET "/users/1" for ::1 at 2021-03-02 10:40:04 +0900
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:6:in `show'
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mPet Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "pets" WHERE "pets"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:34
+  [1m[36mPet Load (0.1ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/users/show.html.erb:41
+  [1m[36mGenre Load (0.1ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:47
+  [1m[36mPost Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "posts" WHERE "posts"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:55
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/users/show.html.erb:60
+  Rendered users/show.html.erb within layouts/application (Duration: 10.1ms | Allocations: 4731)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 74ms (Views: 62.4ms | ActiveRecord: 1.1ms | Allocations: 17358)
+
+
+Started GET "/posts/1" for ::1 at 2021-03-02 10:40:07 +0900
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:25:in `show'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:26:in `show'
+  [1m[36mPet Load (0.1ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:27:in `show'
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:11
+  [1m[36mFavorite Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "favorites" WHERE "favorites"."post_id" = ? AND "favorites"."user_id" = ? LIMIT ?[0m  [["post_id", 1], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/models/post.rb:17:in `favorited_by?'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."post_id" = ?[0m  [["post_id", 1]]
+  ↳ app/views/posts/show.html.erb:13
+  [1m[36mPostComment Load (0.2ms)[0m  [1m[34mSELECT "post_comments".* FROM "post_comments" WHERE "post_comments"."post_id" = ?[0m  [["post_id", 1]]
+  ↳ app/views/posts/show.html.erb:35
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:37
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:37
+  Rendered posts/show.html.erb within layouts/application (Duration: 9.5ms | Allocations: 6298)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 28ms (Views: 22.9ms | ActiveRecord: 0.9ms | Allocations: 19432)
+
+
+Started DELETE "/posts/1/favorites" for ::1 at 2021-03-02 10:40:09 +0900
+Processing by FavoritesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"oV+DVCBpC0lNs+DP/Plm2L1mbDypIIlucb1mJhiXgSXhOKnYufm8KvdboXZgEkPkOmCagZ5bkF+J+fcaB38uLw==", "post_id"=>"1"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/favorites_controller.rb:11:in `destroy'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/favorites_controller.rb:12:in `destroy'
+  [1m[36mFavorite Load (0.1ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites" WHERE "favorites"."user_id" = ? AND "favorites"."post_id" = ? LIMIT ?[0m  [["user_id", 1], ["post_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/favorites_controller.rb:12:in `destroy'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/favorites_controller.rb:13:in `destroy'
+  [1m[36mFavorite Destroy (0.7ms)[0m  [1m[31mDELETE FROM "favorites" WHERE "favorites"."id" = ?[0m  [["id", 6]]
+  ↳ app/controllers/favorites_controller.rb:13:in `destroy'
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/favorites_controller.rb:13:in `destroy'
+Redirected to http://localhost:3000/posts/1
+Completed 302 Found in 13ms (ActiveRecord: 2.0ms | Allocations: 9953)
+
+
+Started GET "/posts/1" for ::1 at 2021-03-02 10:40:09 +0900
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:25:in `show'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:26:in `show'
+  [1m[36mPet Load (0.1ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:27:in `show'
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:11
+  [1m[36mFavorite Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "favorites" WHERE "favorites"."post_id" = ? AND "favorites"."user_id" = ? LIMIT ?[0m  [["post_id", 1], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/models/post.rb:17:in `favorited_by?'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."post_id" = ?[0m  [["post_id", 1]]
+  ↳ app/views/posts/show.html.erb:17
+  [1m[36mPostComment Load (0.1ms)[0m  [1m[34mSELECT "post_comments".* FROM "post_comments" WHERE "post_comments"."post_id" = ?[0m  [["post_id", 1]]
+  ↳ app/views/posts/show.html.erb:35
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:37
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:37
+  Rendered posts/show.html.erb within layouts/application (Duration: 8.5ms | Allocations: 6270)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 24ms (Views: 20.6ms | ActiveRecord: 0.8ms | Allocations: 18806)
+
+
+Started POST "/posts/1/favorites" for ::1 at 2021-03-02 10:40:11 +0900
+Processing by FavoritesController#create as HTML
+  Parameters: {"authenticity_token"=>"VaDTrxlG6ziVc/lH63T7oPanja0bstDo3tGlFDIICN4Vx/kjgNZcWy+buP53n96ccaF7ECzJydkmlTQoLeCn1A==", "post_id"=>"1"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/favorites_controller.rb:4:in `create'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/favorites_controller.rb:5:in `create'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/favorites_controller.rb:6:in `create'
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/favorites_controller.rb:6:in `create'
+  [1m[36mFavorite Create (0.4ms)[0m  [1m[32mINSERT INTO "favorites" ("post_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 1], ["user_id", 1], ["created_at", "2021-03-02 01:40:11.913639"], ["updated_at", "2021-03-02 01:40:11.913639"]]
+  ↳ app/controllers/favorites_controller.rb:6:in `create'
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/favorites_controller.rb:6:in `create'
+Redirected to http://localhost:3000/posts/1
+Completed 302 Found in 11ms (ActiveRecord: 1.6ms | Allocations: 7525)
+
+
+Started GET "/posts/1" for ::1 at 2021-03-02 10:40:11 +0900
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:25:in `show'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:26:in `show'
+  [1m[36mPet Load (0.1ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:27:in `show'
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:11
+  [1m[36mFavorite Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "favorites" WHERE "favorites"."post_id" = ? AND "favorites"."user_id" = ? LIMIT ?[0m  [["post_id", 1], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/models/post.rb:17:in `favorited_by?'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."post_id" = ?[0m  [["post_id", 1]]
+  ↳ app/views/posts/show.html.erb:13
+  [1m[36mPostComment Load (0.1ms)[0m  [1m[34mSELECT "post_comments".* FROM "post_comments" WHERE "post_comments"."post_id" = ?[0m  [["post_id", 1]]
+  ↳ app/views/posts/show.html.erb:35
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:37
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:37
+  Rendered posts/show.html.erb within layouts/application (Duration: 7.1ms | Allocations: 6277)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 23ms (Views: 19.0ms | ActiveRecord: 0.6ms | Allocations: 18810)
+
+
+Started POST "/posts/1/post_comments" for ::1 at 2021-03-02 10:40:20 +0900
+Processing by PostCommentsController#create as HTML
+  Parameters: {"authenticity_token"=>"olLaApo9z2GK9rTLExKfkwfKPqDCX7J5Eu7MmhWe+WTiNfCOA614AjAe9XKP+bqvgMzIHfUkq0jqql2mCnZWbg==", "post_comment"=>{"body"=>"yoyo元気かい"}, "commit"=>"送信", "post_id"=>"1"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/post_comments_controller.rb:4:in `create'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/post_comments_controller.rb:5:in `create'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/post_comments_controller.rb:7:in `create'
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/post_comments_controller.rb:7:in `create'
+  [1m[36mPostComment Create (0.3ms)[0m  [1m[32mINSERT INTO "post_comments" ("post_id", "user_id", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["post_id", 1], ["user_id", 1], ["body", "yoyo元気かい"], ["created_at", "2021-03-02 01:40:20.855479"], ["updated_at", "2021-03-02 01:40:20.855479"]]
+  ↳ app/controllers/post_comments_controller.rb:7:in `create'
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/post_comments_controller.rb:7:in `create'
+Redirected to http://localhost:3000/posts/1
+Completed 302 Found in 10ms (ActiveRecord: 1.2ms | Allocations: 7365)
+
+
+Started GET "/posts/1" for ::1 at 2021-03-02 10:40:20 +0900
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:25:in `show'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:26:in `show'
+  [1m[36mPet Load (0.1ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:27:in `show'
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:11
+  [1m[36mFavorite Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "favorites" WHERE "favorites"."post_id" = ? AND "favorites"."user_id" = ? LIMIT ?[0m  [["post_id", 1], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/models/post.rb:17:in `favorited_by?'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."post_id" = ?[0m  [["post_id", 1]]
+  ↳ app/views/posts/show.html.erb:13
+  [1m[36mPostComment Load (0.1ms)[0m  [1m[34mSELECT "post_comments".* FROM "post_comments" WHERE "post_comments"."post_id" = ?[0m  [["post_id", 1]]
+  ↳ app/views/posts/show.html.erb:35
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:37
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:37
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:37
+  Rendered posts/show.html.erb within layouts/application (Duration: 10.4ms | Allocations: 11738)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 27ms (Views: 21.7ms | ActiveRecord: 0.7ms | Allocations: 27101)
+
+
+Started GET "/posts" for ::1 at 2021-03-02 10:40:31 +0900
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:5
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:8
+  Rendered posts/index.html.erb within layouts/application (Duration: 2.6ms | Allocations: 1908)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:40
+Completed 200 OK in 18ms (Views: 16.8ms | ActiveRecord: 0.3ms | Allocations: 13360)
+
+
+Started GET "/" for ::1 at 2021-03-02 10:40:32 +0900
+Processing by HomesController#index as HTML
+  Rendering homes/index.html.erb within layouts/application
+  Rendered homes/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 45)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:40
+Completed 200 OK in 16ms (Views: 15.4ms | ActiveRecord: 0.1ms | Allocations: 11456)
+
+
+Started GET "/posts" for ::1 at 2021-03-02 11:59:23 +0900
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:5
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:8
+  Rendered posts/index.html.erb within layouts/application (Duration: 3.6ms | Allocations: 1938)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:40
+Completed 200 OK in 24ms (Views: 22.2ms | ActiveRecord: 0.6ms | Allocations: 13402)
+
+
+Started GET "/pets" for ::1 at 2021-03-02 11:59:24 +0900
+Processing by PetsController#index as HTML
+  Rendering pets/index.html.erb within layouts/application
+  [1m[36mPet Load (0.2ms)[0m  [1m[34mSELECT "pets".* FROM "pets"[0m
+  ↳ app/views/pets/index.html.erb:17
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/pets/index.html.erb:27
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/pets/index.html.erb:29
+  Rendered pets/index.html.erb within layouts/application (Duration: 4.9ms | Allocations: 2702)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:40
+Completed 200 OK in 25ms (Views: 22.7ms | ActiveRecord: 0.7ms | Allocations: 14125)
+
+
+Started GET "/users/1/pets" for ::1 at 2021-03-02 11:59:29 +0900
+Processing by UsersController#pets_index as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:35:in `pets_index'
+  Rendering users/pets_index.html.erb within layouts/application
+  [1m[36mPet Load (0.2ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/users/pets_index.html.erb:12
+  Rendered users/pets_index.html.erb within layouts/application (Duration: 2.1ms | Allocations: 1049)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 23ms (Views: 19.0ms | ActiveRecord: 0.4ms | Allocations: 13600)
+
+
+Started GET "/users/1" for ::1 at 2021-03-02 11:59:32 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:6:in `show'
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mPet Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "pets" WHERE "pets"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:34
+  [1m[36mPet Load (0.1ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/users/show.html.erb:41
+  [1m[36mGenre Load (0.1ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:47
+  [1m[36mPost Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "posts" WHERE "posts"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:55
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/users/show.html.erb:60
+  Rendered users/show.html.erb within layouts/application (Duration: 7.1ms | Allocations: 4692)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 23ms (Views: 19.6ms | ActiveRecord: 0.8ms | Allocations: 17259)
+
+
+Started GET "/" for ::1 at 2021-03-02 11:59:34 +0900
+Processing by HomesController#index as HTML
+  Rendering homes/index.html.erb within layouts/application
+  Rendered homes/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 44)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:40
+Completed 200 OK in 19ms (Views: 17.9ms | ActiveRecord: 0.1ms | Allocations: 11470)
+
+
+Started GET "/users/1" for ::1 at 2021-03-02 11:59:36 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:6:in `show'
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mPet Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "pets" WHERE "pets"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:34
+  [1m[36mPet Load (0.1ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/users/show.html.erb:41
+  [1m[36mGenre Load (0.1ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:47
+  [1m[36mPost Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "posts" WHERE "posts"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:55
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/users/show.html.erb:60
+  Rendered users/show.html.erb within layouts/application (Duration: 6.6ms | Allocations: 4666)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 24ms (Views: 19.3ms | ActiveRecord: 0.8ms | Allocations: 17232)
+
+
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateRelationships (20210302030108)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE  INDEX "index_relationships_on_follower_id" ON "relationships" ("follower_id")[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateRelationships (20210302030108)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "relationships" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "follower_id" integer, "followee_id" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210302030108"]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateRelationships (20210302030108)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE "relationships"[0m
+  [1m[36mprimary::SchemaMigration Destroy (0.1ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?[0m  [["version", "20210302030108"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateRelationships (20210302030108)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "relationships" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "follower_id" integer, "followee_id" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE  INDEX "index_relationships_on_follower_id" ON "relationships" ("follower_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_relationships_on_followee_id" ON "relationships" ("followee_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_relationships_on_follower_id_and_followee_id" ON "relationships" ("follower_id", "followee_id")[0m
+  [1m[36mprimary::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210302030108"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/users/1" for ::1 at 2021-03-02 13:51:41 +0900
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:6:in `show'
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mPet Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "pets" WHERE "pets"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:34
+  [1m[36mPet Load (0.1ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/users/show.html.erb:41
+  [1m[36mGenre Load (0.4ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:47
+  [1m[36mPost Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "posts" WHERE "posts"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:55
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/users/show.html.erb:60
+  Rendered users/show.html.erb within layouts/application (Duration: 46.4ms | Allocations: 27799)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 1965ms (Views: 1917.2ms | ActiveRecord: 3.9ms | Allocations: 175710)
+
+
+Started GET "/attachments/0b9a768fae93920579161babe61546845a33ace1/store/49f42c2d84665082c367619d920f1b38e3ea4362561bdb565113a2d20193/image" for ::1 at 2021-03-02 13:51:43 +0900
+Started GET "/attachments/abfd698fcfe266f91c77f1f1bd2a3ac2b2043ef6/store/db2ced772c537d1c5e0b1f7aaa54b3b9706f182f866d78926272ffc6e827/image" for ::1 at 2021-03-02 13:51:43 +0900
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Refile::App: [2021-03-02 13:51:43 +0900] GET "/0b9a768fae93920579161babe61546845a33ace1/store/49f42c2d84665082c367619d920f1b38e3ea4362561bdb565113a2d20193/image" 200 11.1ms
+
+Refile::App: [2021-03-02 13:51:43 +0900] GET "/abfd698fcfe266f91c77f1f1bd2a3ac2b2043ef6/store/db2ced772c537d1c5e0b1f7aaa54b3b9706f182f866d78926272ffc6e827/image" 200 11.8ms
+
+Started GET "/attachments/a93d80d8be301df945896707e8b8f106d2f358a6/store/7c9dcdb749c96cc1dfec19f03ca5d1a991100f80ca8f1ad04804d7db84be/image" for ::1 at 2021-03-02 13:51:43 +0900
+Refile::App: [2021-03-02 13:51:43 +0900] GET "/a93d80d8be301df945896707e8b8f106d2f358a6/store/7c9dcdb749c96cc1dfec19f03ca5d1a991100f80ca8f1ad04804d7db84be/image" 200 47.7ms
+
+Started GET "/users/1" for ::1 at 2021-03-02 14:05:00 +0900
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:6:in `show'
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mPet Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "pets" WHERE "pets"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:34
+  [1m[36mPet Load (0.1ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/users/show.html.erb:41
+  [1m[36mGenre Load (0.4ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:47
+  [1m[36mPost Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "posts" WHERE "posts"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:55
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/users/show.html.erb:60
+  Rendered users/show.html.erb within layouts/application (Duration: 10.1ms | Allocations: 4736)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 33ms (Views: 25.9ms | ActiveRecord: 2.3ms | Allocations: 17449)
+
+
+Started GET "/users/1" for ::1 at 2021-03-02 14:08:55 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:6:in `show'
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 16.2ms | Allocations: 6393)
+Completed 500 Internal Server Error in 24ms (ActiveRecord: 0.2ms | Allocations: 10927)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <div class="container">
+    <div class="contain2">
+        <div class="hukidasi">
+            <h1>
+                <% if @user == current_user %>
+                    マイページ
+                <% else %>
+                    <%= @user.name %>さんのページ
+                <% end %>
+            </h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-4">
+            <p><%= attachment_image_tag @user, :image, size: "300x300" %></p>
+            お名前&emsp;<%= @user.name %>
+            <p>
+                <% if current_user == @user %>
+                    <%= link_to "編集ページへ", edit_user_path(@user.id) %>
+                <% end %>
+            </p>
+            <p>
+                <% unless current_user == @user %>
+                    <% if current_user.following?(@user) %>
+                        <%= link_to "フォロー外す", user_relationships_path(@user), method: :delete, class:"btn btn-default"%>
+                    <% else %>
+                        <%= link_to "フォローする", user_relationships_path(@user), method: :post, class:"btn btn-primary"%>
+                <% end %>
+            </p>
+        </div>
+        <div class="col-8">
+            <% if @user.introduction == nil %>
+                <p>まだ紹介文がありません</p>
+            <% else %>
+                <%= @user.introduction %>
+            <% end %>
+        </div>
+    </div>
+    <div class="contain2 hukidasi">
+        <% if @user == current_user %>
+            <h1>うちの子</h1>
+        <% else %>
+            <h1><%= @user.name %>さんちの子</h1>
+        <% end %>
+
+        <% if @pets.empty? %>
+            <p>まだうちの子登録されていません</p>
+            <p><%= link_to "うちの子登録ページへ", new_pet_path %></p>
+        <% else %>
+        <table class="table">
+            <tbody>
+            <tr>
+            <% @pets.each do |pet| %>
+                <td><%= attachment_image_tag pet, :image, size: "100x100" %></td>
+                <td><%= pet.name %></td>
+                <td><%= pet.introduction %></td>
+                <td><%= pet.sex %></td>
+                <td><%= pet.age %></td>
+                <td><%= pet.genre.name %></td>
+            <% end %>
+            </tr>
+            </tbody>
+        </table>
+        <% end %>
+
+        <h1>投稿一覧</h1>
+        <% if @posts.empty? %>
+            <p>まだ投稿をされていません</p>
+            <p><%= link_to "新規投稿ページへ", new_post_path %></p>
+        <% else %>
+        <div>
+            <% @posts.each do |post| %>
+            <div class="test">
+                <p>
+                    <%= link_to user_path(post.user) do %>
+                        <%= attachment_image_tag post.user, :image, size: "50x50" %>
+                        <%= post.user.name %>
+                    <% end %>
+                </p>
+                <span>
+                    <%= link_to post_path(post) do %>
+                    <%= attachment_image_tag post, :image, size: "200x200" %>
+                </span>
+                <p><%= post.title %></p>
+                <% end %>
+                </div>
+            <% end %>
+        </div>
+        <% end %>
+
+    </div>
+</div>
+):
+1:    <div class="container">
+2:        <div class="contain2">
+3:            <div class="hukidasi">
+4:                <h1>
+5:                    <% if @user == current_user %>
+6:                        マイページ
+7:                    <% else %>
+8:                        <%= @user.name %>さんのページ
+9:                    <% end %>
+10:                </h1>
+11:            </div>
+12:        </div>
+13:        <div class="row">
+14:            <div class="col-4">
+15:                <p><%= attachment_image_tag @user, :image, size: "300x300" %></p>
+16:                お名前&emsp;<%= @user.name %>
+17:                <p>
+18:                    <% if current_user == @user %>
+19:                        <%= link_to "編集ページへ", edit_user_path(@user.id) %>
+20:                    <% end %>
+21:                </p>
+22:                <p>
+23:                    <% unless current_user == @user %>
+24:                        <% if current_user.following?(@user) %>
+25:                            <%= link_to "フォロー外す", user_relationships_path(@user), method: :delete, class:"btn btn-default"%>
+26:                        <% else %>
+27:                            <%= link_to "フォローする", user_relationships_path(@user), method: :post, class:"btn btn-primary"%>
+28:                    <% end %>
+29:                </p>
+30:            </div>
+31:            <div class="col-8">
+32:                <% if @user.introduction == nil %>
+33:                    <p>まだ紹介文がありません</p>
+34:                <% else %>
+35:                    <%= @user.introduction %>
+36:                <% end %>
+37:            </div>
+38:        </div>
+39:        <div class="contain2 hukidasi">
+40:            <% if @user == current_user %>
+41:                <h1>うちの子</h1>
+42:            <% else %>
+43:                <h1><%= @user.name %>さんちの子</h1>
+44:            <% end %>
+45:    
+46:            <% if @pets.empty? %>
+47:                <p>まだうちの子登録されていません</p>
+48:                <p><%= link_to "うちの子登録ページへ", new_pet_path %></p>
+49:            <% else %>
+50:            <table class="table">
+51:                <tbody>
+52:                <tr>
+53:                <% @pets.each do |pet| %>
+54:                    <td><%= attachment_image_tag pet, :image, size: "100x100" %></td>
+55:                    <td><%= pet.name %></td>
+56:                    <td><%= pet.introduction %></td>
+57:                    <td><%= pet.sex %></td>
+58:                    <td><%= pet.age %></td>
+59:                    <td><%= pet.genre.name %></td>
+60:                <% end %>
+61:                </tr>
+62:                </tbody>
+63:            </table>
+64:            <% end %>
+65:    
+66:            <h1>投稿一覧</h1>
+67:            <% if @posts.empty? %>
+68:                <p>まだ投稿をされていません</p>
+69:                <p><%= link_to "新規投稿ページへ", new_post_path %></p>
+70:            <% else %>
+71:            <div>
+72:                <% @posts.each do |post| %>
+73:                <div class="test">
+74:                    <p>
+75:                        <%= link_to user_path(post.user) do %>
+76:                            <%= attachment_image_tag post.user, :image, size: "50x50" %>
+77:                            <%= post.user.name %>
+78:                        <% end %>
+79:                    </p>
+80:                    <span>
+81:                        <%= link_to post_path(post) do %>
+82:                        <%= attachment_image_tag post, :image, size: "200x200" %>
+83:                    </span>
+84:                    <p><%= post.title %></p>
+85:                    <% end %>
+86:                    </div>
+87:                <% end %>
+88:            </div>
+89:            <% end %>
+90:    
+91:        </div>
+92:    </div>
+  
+app/views/users/show.html.erb:94: syntax error, unexpected end-of-input, expecting keyword_end
+app/views/users/show.html.erb:94: syntax error, unexpected end-of-input, expecting keyword_end
+app/views/users/show.html.erb:94: syntax error, unexpected end-of-input, expecting keyword_end
+app/views/users/show.html.erb:94: syntax error, unexpected end-of-input, expecting keyword_end
+app/views/users/show.html.erb:94: syntax error, unexpected end-of-input, expecting keyword_end
+app/views/users/show.html.erb:94: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/users/1" for ::1 at 2021-03-02 14:09:13 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:6:in `show'
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mPet Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "pets" WHERE "pets"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:47
+  [1m[36mPet Load (0.1ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/users/show.html.erb:54
+  [1m[36mGenre Load (0.1ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:60
+  [1m[36mPost Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "posts" WHERE "posts"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:68
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/users/show.html.erb:73
+  Rendered users/show.html.erb within layouts/application (Duration: 8.5ms | Allocations: 5689)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 28ms (Views: 23.1ms | ActiveRecord: 0.6ms | Allocations: 20098)
+
+
+Started GET "/users/1/edit" for ::1 at 2021-03-02 14:09:16 +0900
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:12:in `edit'
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/edit.html.erb within layouts/application (Duration: 16.7ms | Allocations: 1522)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 32ms (Views: 28.6ms | ActiveRecord: 0.2ms | Allocations: 14262)
+
+
+Started PATCH "/users/1" for ::1 at 2021-03-02 14:09:31 +0900
+Processing by UsersController#update as HTML
+  Parameters: {"authenticity_token"=>"VRCXkQsOxskhaUHYfdDAGmKyGBzf6an+Tz7Pq1rfLWbokvI7HXDZKOXyu6aHUQhv7j0pe80zGqRzbyxKcFcU3A==", "user"=>{"name"=>"okari", "image"=>"{}", "introduction"=>"okariやで\r\nokariやでったら\r\nokariやで"}, "commit"=>"更新する", "id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16:in `update'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:17:in `update'
+  [1m[36mUser Update (0.4ms)[0m  [1m[33mUPDATE "users" SET "introduction" = ?, "updated_at" = ?, "image_id" = ? WHERE "users"."id" = ?[0m  [["introduction", "okariやで\r\nokariやでったら\r\nokariやで"], ["updated_at", "2021-03-02 05:09:31.378616"], ["image_id", "49f42c2d84665082c367619d920f1b38e3ea4362561bdb565113a2d20193"], ["id", 1]]
+  ↳ app/controllers/users_controller.rb:17:in `update'
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:17:in `update'
+Redirected to http://localhost:3000/users/1
+Completed 302 Found in 8ms (ActiveRecord: 1.2ms | Allocations: 6925)
+
+
+Started GET "/users/1" for ::1 at 2021-03-02 14:09:31 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:6:in `show'
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mPet Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "pets" WHERE "pets"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:47
+  [1m[36mPet Load (0.1ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/users/show.html.erb:54
+  [1m[36mGenre Load (0.1ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:60
+  [1m[36mPost Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "posts" WHERE "posts"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:68
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/users/show.html.erb:73
+  Rendered users/show.html.erb within layouts/application (Duration: 5.3ms | Allocations: 4675)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 20ms (Views: 16.5ms | ActiveRecord: 0.7ms | Allocations: 17322)
+
+
+Started GET "/users/2" for ::1 at 2021-03-02 14:11:13 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:6:in `show'
+Completed 404 Not Found in 4ms (ActiveRecord: 0.2ms | Allocations: 3602)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=2):
+  
+app/controllers/users_controller.rb:6:in `show'
+Started GET "/users/3" for ::1 at 2021-03-02 14:11:21 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:6:in `show'
+Completed 404 Not Found in 4ms (ActiveRecord: 0.2ms | Allocations: 3598)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=3):
+  
+app/controllers/users_controller.rb:6:in `show'
+Started GET "/users/" for ::1 at 2021-03-02 14:11:25 +0900
+Processing by UsersController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 1290)
+
+
+Started GET "/admins/sign_in" for ::1 at 2021-03-02 14:11:25 +0900
+Processing by Admins::SessionsController#new as HTML
+  Rendering admins/sessions/new.html.erb within layouts/application
+  Rendered admins/shared/_links.html.erb (Duration: 2.2ms | Allocations: 520)
+  Rendered admins/sessions/new.html.erb within layouts/application (Duration: 15.4ms | Allocations: 3454)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:40
+Completed 200 OK in 45ms (Views: 31.9ms | ActiveRecord: 0.6ms | Allocations: 23777)
+
+
+Started GET "/posts" for ::1 at 2021-03-02 14:11:28 +0900
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:5
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:8
+  Rendered posts/index.html.erb within layouts/application (Duration: 5.6ms | Allocations: 2383)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:40
+Completed 200 OK in 25ms (Views: 22.4ms | ActiveRecord: 0.4ms | Allocations: 14738)
+
+
+Started GET "/pets" for ::1 at 2021-03-02 14:11:29 +0900
+Processing by PetsController#index as HTML
+  Rendering pets/index.html.erb within layouts/application
+  [1m[36mPet Load (0.2ms)[0m  [1m[34mSELECT "pets".* FROM "pets"[0m
+  ↳ app/views/pets/index.html.erb:17
+  [1m[36mGenre Load (0.1ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/pets/index.html.erb:27
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/pets/index.html.erb:29
+  Rendered pets/index.html.erb within layouts/application (Duration: 6.4ms | Allocations: 3227)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:40
+Completed 200 OK in 26ms (Views: 23.9ms | ActiveRecord: 0.5ms | Allocations: 15590)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2021-03-02 14:11:32 +0900
+Processing by Users::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"BeP4cLmV+FI205c0LS1vgCLRV7vM6Oo8ZVP9MWTcdspFhNL8IAVPMYw71o2xxkq8pdehBvuT8w2dF2wNezTZwA=="}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 13ms (ActiveRecord: 0.1ms | Allocations: 3972)
+
+
+Started GET "/" for ::1 at 2021-03-02 14:11:32 +0900
+Processing by HomesController#index as HTML
+  Rendering homes/index.html.erb within layouts/application
+  Rendered homes/index.html.erb within layouts/application (Duration: 1.7ms | Allocations: 171)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 22ms (Views: 20.4ms | ActiveRecord: 0.0ms | Allocations: 11578)
+
+
+Started GET "/users/sign_up" for ::1 at 2021-03-02 14:11:34 +0900
+Processing by Users::RegistrationsController#new as HTML
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered users/shared/_error_messages.html.erb (Duration: 1.8ms | Allocations: 210)
+  Rendered users/registrations/new.html.erb within layouts/application (Duration: 5.0ms | Allocations: 1256)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 22ms (Views: 20.8ms | ActiveRecord: 0.0ms | Allocations: 13357)
+
+
+Started POST "/users" for ::1 at 2021-03-02 14:11:52 +0900
+Processing by Users::RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"ZsdwhaI3H2Rc5AT444henamUIgFKExA7Nunr80YnDLOTAkRCS1MNL+Pa2v0guVR5KQyrbx/ZP8H0BClMFRNBLg==", "user"=>{"name"=>"okarinko", "email"=>"bbbb@bbbb", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"新規登録"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (1.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "bbbb@bbbb"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.8ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "name") VALUES (?, ?, ?, ?, ?)[0m  [["email", "bbbb@bbbb"], ["encrypted_password", "$2a$12$XKUfX2Gr96y2pEjMfNDhoeC19/fyvWtXizXA5Lr0MzLMl36kpdfvu"], ["created_at", "2021-03-02 05:11:52.257923"], ["updated_at", "2021-03-02 05:11:52.257923"], ["name", "okarinko"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 237ms (ActiveRecord: 2.6ms | Allocations: 11614)
+
+
+Started GET "/" for ::1 at 2021-03-02 14:11:52 +0900
+Processing by HomesController#index as HTML
+  Rendering homes/index.html.erb within layouts/application
+  Rendered homes/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 49)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:40
+Completed 200 OK in 14ms (Views: 13.0ms | ActiveRecord: 0.1ms | Allocations: 11552)
+
+
+Started GET "/posts" for ::1 at 2021-03-02 14:11:56 +0900
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:5
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:8
+  Rendered posts/index.html.erb within layouts/application (Duration: 2.6ms | Allocations: 1895)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:40
+Completed 200 OK in 18ms (Views: 16.5ms | ActiveRecord: 0.3ms | Allocations: 13413)
+
+
+Started GET "/users/1" for ::1 at 2021-03-02 14:11:57 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:6:in `show'
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."followee_id" WHERE "relationships"."follower_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["follower_id", 2], ["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:25:in `following?'
+  [1m[36mPet Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "pets" WHERE "pets"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:47
+  [1m[36mPet Load (0.1ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/users/show.html.erb:54
+  [1m[36mGenre Load (0.1ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:60
+  [1m[36mPost Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "posts" WHERE "posts"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:68
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/users/show.html.erb:73
+  Rendered users/show.html.erb within layouts/application (Duration: 33.8ms | Allocations: 14644)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 51ms (Views: 45.4ms | ActiveRecord: 1.8ms | Allocations: 27199)
+
+
+Started POST "/users/1/relationships" for ::1 at 2021-03-02 14:12:00 +0900
+Processing by RelationshipsController#create as HTML
+  Parameters: {"authenticity_token"=>"WcRWZTk0GpSqrzQiEPWA0diyLl2uv97M257eixABHukZo3zpoKSt9xBHdZuMHqXtX7TY4JnEx/0j2k+3D+mx4w==", "user_id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/relationships_controller.rb:6:in `create'
+  [1m[36mRelationship Load (0.2ms)[0m  [1m[34mSELECT "relationships".* FROM "relationships" WHERE "relationships"."follower_id" = ? AND "relationships"."followee_id" = ? AND "relationships"."follower_id" = ? LIMIT ?[0m  [["follower_id", 2], ["followee_id", 1], ["follower_id", 2], ["LIMIT", 1]]
+  ↳ app/models/user.rb:30:in `follow'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/user.rb:30:in `follow'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/user.rb:30:in `follow'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:30:in `follow'
+  [1m[36mRelationship Create (1.1ms)[0m  [1m[32mINSERT INTO "relationships" ("follower_id", "followee_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["follower_id", 2], ["followee_id", 1], ["created_at", "2021-03-02 05:12:00.454020"], ["updated_at", "2021-03-02 05:12:00.454020"]]
+  ↳ app/models/user.rb:30:in `follow'
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/user.rb:30:in `follow'
+Redirected to http://localhost:3000/users/1
+Completed 302 Found in 19ms (ActiveRecord: 2.5ms | Allocations: 13653)
+
+
+Started GET "/users/1" for ::1 at 2021-03-02 14:12:00 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:6:in `show'
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."followee_id" WHERE "relationships"."follower_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["follower_id", 2], ["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:25:in `following?'
+  [1m[36mPet Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "pets" WHERE "pets"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:47
+  [1m[36mPet Load (0.1ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/users/show.html.erb:54
+  [1m[36mGenre Load (0.1ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:60
+  [1m[36mPost Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "posts" WHERE "posts"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:68
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/users/show.html.erb:73
+  Rendered users/show.html.erb within layouts/application (Duration: 9.5ms | Allocations: 5746)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 25ms (Views: 21.2ms | ActiveRecord: 0.7ms | Allocations: 18420)
+
+
+Started DELETE "/users/1/relationships" for ::1 at 2021-03-02 14:12:01 +0900
+Processing by RelationshipsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"Sug1JRvkhHxN8dLglHDLjRrUvKUEvzdtGkdprXnX8pQKjx+pgnQzH/cZk1kIm+6xndJKGDPELlziA/iRZj9dng==", "user_id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/relationships_controller.rb:12:in `destroy'
+  [1m[36mRelationship Load (0.1ms)[0m  [1m[34mSELECT "relationships".* FROM "relationships" WHERE "relationships"."follower_id" = ? AND "relationships"."followee_id" = ? AND "relationships"."follower_id" = ? LIMIT ?[0m  [["follower_id", 2], ["followee_id", 1], ["follower_id", 2], ["LIMIT", 1]]
+  ↳ app/models/user.rb:36:in `unfollow'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/user.rb:37:in `unfollow'
+  [1m[36mRelationship Destroy (0.4ms)[0m  [1m[31mDELETE FROM "relationships" WHERE "relationships"."id" = ?[0m  [["id", 1]]
+  ↳ app/models/user.rb:37:in `unfollow'
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/user.rb:37:in `unfollow'
+Redirected to http://localhost:3000/users/1
+Completed 302 Found in 9ms (ActiveRecord: 1.5ms | Allocations: 6202)
+
+
+Started GET "/users/1" for ::1 at 2021-03-02 14:12:01 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:6:in `show'
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."followee_id" WHERE "relationships"."follower_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["follower_id", 2], ["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:25:in `following?'
+  [1m[36mPet Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "pets" WHERE "pets"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:47
+  [1m[36mPet Load (0.1ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/users/show.html.erb:54
+  [1m[36mGenre Load (0.1ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:60
+  [1m[36mPost Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "posts" WHERE "posts"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:68
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/users/show.html.erb:73
+  Rendered users/show.html.erb within layouts/application (Duration: 8.2ms | Allocations: 5738)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 24ms (Views: 20.0ms | ActiveRecord: 0.9ms | Allocations: 18379)
+
+
+Started POST "/users/1/relationships" for ::1 at 2021-03-02 14:12:02 +0900
+Processing by RelationshipsController#create as HTML
+  Parameters: {"authenticity_token"=>"N2G4rGF5S7Y6CUTNHeu18UR7LwpZ4/C2g2q0shWdI1Z3BpIg+On81YDhBXSBAJDNw33Zt26Y6Yd7LiWOCnWMXA==", "user_id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/relationships_controller.rb:6:in `create'
+  [1m[36mRelationship Load (0.1ms)[0m  [1m[34mSELECT "relationships".* FROM "relationships" WHERE "relationships"."follower_id" = ? AND "relationships"."followee_id" = ? AND "relationships"."follower_id" = ? LIMIT ?[0m  [["follower_id", 2], ["followee_id", 1], ["follower_id", 2], ["LIMIT", 1]]
+  ↳ app/models/user.rb:30:in `follow'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/user.rb:30:in `follow'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/user.rb:30:in `follow'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:30:in `follow'
+  [1m[36mRelationship Create (0.3ms)[0m  [1m[32mINSERT INTO "relationships" ("follower_id", "followee_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["follower_id", 2], ["followee_id", 1], ["created_at", "2021-03-02 05:12:02.408049"], ["updated_at", "2021-03-02 05:12:02.408049"]]
+  ↳ app/models/user.rb:30:in `follow'
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/user.rb:30:in `follow'
+Redirected to http://localhost:3000/users/1
+Completed 302 Found in 10ms (ActiveRecord: 1.3ms | Allocations: 9598)
+
+
+Started GET "/users/1" for ::1 at 2021-03-02 14:12:02 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:6:in `show'
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."followee_id" WHERE "relationships"."follower_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["follower_id", 2], ["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:25:in `following?'
+  [1m[36mPet Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "pets" WHERE "pets"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:47
+  [1m[36mPet Load (0.1ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/users/show.html.erb:54
+  [1m[36mGenre Load (0.1ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:60
+  [1m[36mPost Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "posts" WHERE "posts"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:68
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/users/show.html.erb:73
+  Rendered users/show.html.erb within layouts/application (Duration: 7.8ms | Allocations: 5743)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 34ms (Views: 30.3ms | ActiveRecord: 0.9ms | Allocations: 33668)
+
+
+Started DELETE "/users/1/relationships" for ::1 at 2021-03-02 14:12:03 +0900
+Processing by RelationshipsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"y6uKMDr3FVuXp0quXPilfI8DaH6+NhnP/HvjWcZ4xauLzKC8o2eiOC1PCxfAE4BACAWew4lNAP4EP3Jl2ZBqoQ==", "user_id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/relationships_controller.rb:12:in `destroy'
+  [1m[36mRelationship Load (0.1ms)[0m  [1m[34mSELECT "relationships".* FROM "relationships" WHERE "relationships"."follower_id" = ? AND "relationships"."followee_id" = ? AND "relationships"."follower_id" = ? LIMIT ?[0m  [["follower_id", 2], ["followee_id", 1], ["follower_id", 2], ["LIMIT", 1]]
+  ↳ app/models/user.rb:36:in `unfollow'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/user.rb:37:in `unfollow'
+  [1m[36mRelationship Destroy (0.4ms)[0m  [1m[31mDELETE FROM "relationships" WHERE "relationships"."id" = ?[0m  [["id", 2]]
+  ↳ app/models/user.rb:37:in `unfollow'
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/user.rb:37:in `unfollow'
+Redirected to http://localhost:3000/users/1
+Completed 302 Found in 8ms (ActiveRecord: 1.5ms | Allocations: 6188)
+
+
+Started GET "/users/1" for ::1 at 2021-03-02 14:12:03 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:6:in `show'
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."followee_id" WHERE "relationships"."follower_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["follower_id", 2], ["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:25:in `following?'
+  [1m[36mPet Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "pets" WHERE "pets"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:47
+  [1m[36mPet Load (0.1ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/users/show.html.erb:54
+  [1m[36mGenre Load (0.1ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:60
+  [1m[36mPost Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "posts" WHERE "posts"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:68
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/users/show.html.erb:73
+  Rendered users/show.html.erb within layouts/application (Duration: 7.4ms | Allocations: 5739)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 25ms (Views: 21.1ms | ActiveRecord: 0.8ms | Allocations: 18386)
+
+
+Started GET "/users/1" for ::1 at 2021-03-02 14:12:05 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:6:in `show'
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."followee_id" WHERE "relationships"."follower_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["follower_id", 2], ["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:25:in `following?'
+  [1m[36mPet Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "pets" WHERE "pets"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:47
+  [1m[36mPet Load (0.1ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/users/show.html.erb:54
+  [1m[36mGenre Load (0.1ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:60
+  [1m[36mPost Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "posts" WHERE "posts"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:68
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/users/show.html.erb:73
+  Rendered users/show.html.erb within layouts/application (Duration: 7.7ms | Allocations: 5742)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 25ms (Views: 20.4ms | ActiveRecord: 0.8ms | Allocations: 18399)
+
+
+Started GET "/posts/1" for ::1 at 2021-03-02 14:12:18 +0900
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:25:in `show'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:26:in `show'
+  [1m[36mPet Load (0.2ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:27:in `show'
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:11
+  [1m[36mFavorite Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "favorites" WHERE "favorites"."post_id" = ? AND "favorites"."user_id" = ? LIMIT ?[0m  [["post_id", 1], ["user_id", 2], ["LIMIT", 1]]
+  ↳ app/models/post.rb:17:in `favorited_by?'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."post_id" = ?[0m  [["post_id", 1]]
+  ↳ app/views/posts/show.html.erb:17
+  [1m[36mPostComment Load (0.2ms)[0m  [1m[34mSELECT "post_comments".* FROM "post_comments" WHERE "post_comments"."post_id" = ?[0m  [["post_id", 1]]
+  ↳ app/views/posts/show.html.erb:35
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:37
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:37
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:37
+  Rendered posts/show.html.erb within layouts/application (Duration: 29.6ms | Allocations: 11415)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 77ms (Views: 56.2ms | ActiveRecord: 2.6ms | Allocations: 30259)
+
+
+Started POST "/posts/1/favorites" for ::1 at 2021-03-02 14:12:22 +0900
+Processing by FavoritesController#create as HTML
+  Parameters: {"authenticity_token"=>"qmdIX4C1y1LMsmQGTORzFJUoWcW/NnOnxxhVSEPAqgHqAGLTGSV8MXZaJb/QD1YoEi6veIhNapY/XMR0XCgFCw==", "post_id"=>"1"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/favorites_controller.rb:4:in `create'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/favorites_controller.rb:5:in `create'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/favorites_controller.rb:6:in `create'
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/favorites_controller.rb:6:in `create'
+  [1m[36mFavorite Create (0.3ms)[0m  [1m[32mINSERT INTO "favorites" ("post_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 1], ["user_id", 2], ["created_at", "2021-03-02 05:12:22.671558"], ["updated_at", "2021-03-02 05:12:22.671558"]]
+  ↳ app/controllers/favorites_controller.rb:6:in `create'
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/favorites_controller.rb:6:in `create'
+Redirected to http://localhost:3000/posts/1
+Completed 302 Found in 15ms (ActiveRecord: 1.8ms | Allocations: 11555)
+
+
+Started GET "/posts/1" for ::1 at 2021-03-02 14:12:22 +0900
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:25:in `show'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:26:in `show'
+  [1m[36mPet Load (0.1ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:27:in `show'
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:11
+  [1m[36mFavorite Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "favorites" WHERE "favorites"."post_id" = ? AND "favorites"."user_id" = ? LIMIT ?[0m  [["post_id", 1], ["user_id", 2], ["LIMIT", 1]]
+  ↳ app/models/post.rb:17:in `favorited_by?'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."post_id" = ?[0m  [["post_id", 1]]
+  ↳ app/views/posts/show.html.erb:13
+  [1m[36mPostComment Load (0.1ms)[0m  [1m[34mSELECT "post_comments".* FROM "post_comments" WHERE "post_comments"."post_id" = ?[0m  [["post_id", 1]]
+  ↳ app/views/posts/show.html.erb:35
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:37
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:37
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:37
+  Rendered posts/show.html.erb within layouts/application (Duration: 7.4ms | Allocations: 7120)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 22ms (Views: 18.4ms | ActiveRecord: 0.6ms | Allocations: 19746)
+
+
+Started POST "/posts/1/post_comments" for ::1 at 2021-03-02 14:12:32 +0900
+Processing by PostCommentsController#create as HTML
+  Parameters: {"authenticity_token"=>"JViRJakU8fSwh7ogApWwyui3DnipXtAR/jDcJePEUvFlP7upMIRGlwpv+5mefpX2b7H4xZ4lySAGdE0Z/Cz9+w==", "post_comment"=>{"body"=>"かわいっすね"}, "commit"=>"送信", "post_id"=>"1"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/post_comments_controller.rb:4:in `create'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/post_comments_controller.rb:5:in `create'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/post_comments_controller.rb:7:in `create'
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/post_comments_controller.rb:7:in `create'
+  [1m[36mPostComment Create (0.4ms)[0m  [1m[32mINSERT INTO "post_comments" ("post_id", "user_id", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["post_id", 1], ["user_id", 2], ["body", "かわいっすね"], ["created_at", "2021-03-02 05:12:32.537778"], ["updated_at", "2021-03-02 05:12:32.537778"]]
+  ↳ app/controllers/post_comments_controller.rb:7:in `create'
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/post_comments_controller.rb:7:in `create'
+Redirected to http://localhost:3000/posts/1
+Completed 302 Found in 13ms (ActiveRecord: 1.4ms | Allocations: 7317)
+
+
+Started GET "/posts/1" for ::1 at 2021-03-02 14:12:32 +0900
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:25:in `show'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:26:in `show'
+  [1m[36mPet Load (0.1ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:27:in `show'
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:11
+  [1m[36mFavorite Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "favorites" WHERE "favorites"."post_id" = ? AND "favorites"."user_id" = ? LIMIT ?[0m  [["post_id", 1], ["user_id", 2], ["LIMIT", 1]]
+  ↳ app/models/post.rb:17:in `favorited_by?'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."post_id" = ?[0m  [["post_id", 1]]
+  ↳ app/views/posts/show.html.erb:13
+  [1m[36mPostComment Load (0.1ms)[0m  [1m[34mSELECT "post_comments".* FROM "post_comments" WHERE "post_comments"."post_id" = ?[0m  [["post_id", 1]]
+  ↳ app/views/posts/show.html.erb:35
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:37
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:37
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:37
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:37
+  Rendered posts/show.html.erb within layouts/application (Duration: 9.9ms | Allocations: 8026)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 28ms (Views: 23.2ms | ActiveRecord: 0.9ms | Allocations: 20648)
+
+
+Started GET "/users/2" for ::1 at 2021-03-02 14:12:37 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:6:in `show'
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mPet Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "pets" WHERE "pets"."user_id" = ? LIMIT ?[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:47
+  [1m[36mPost Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "posts" WHERE "posts"."user_id" = ? LIMIT ?[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:68
+  Rendered users/show.html.erb within layouts/application (Duration: 2.7ms | Allocations: 1739)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 23ms (Views: 18.9ms | ActiveRecord: 0.5ms | Allocations: 14393)
+
+
+Started GET "/users/2/edit" for ::1 at 2021-03-02 14:12:39 +0900
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:12:in `edit'
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/edit.html.erb within layouts/application (Duration: 0.9ms | Allocations: 492)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 20ms (Views: 15.7ms | ActiveRecord: 0.2ms | Allocations: 13094)
+
+
+Started PATCH "/users/2" for ::1 at 2021-03-02 14:13:23 +0900
+Processing by UsersController#update as HTML
+  Parameters: {"authenticity_token"=>"yHQulfwafcmNz9R6NQQu/79McJFn/5syq96UQQppcavG9SxBUAu94SVe9V/vBIzcf5QC40DKG/yCj0w2PIP8bg==", "user"=>{"name"=>"okarinko", "image"=>#<ActionDispatch::Http::UploadedFile:0x00007fba26194ac8 @tempfile=#<Tempfile:/var/folders/hb/gvqykg597jxgqykt3v7y4r040000gn/T/RackMultipart20210302-68788-ps89kw.png>, @original_filename="スクリーンショット 2020-11-16 12.21.14.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"user[image]\"; filename=\"\xE3\x82\xB9\xE3\x82\xAF\xE3\x83\xAA\xE3\x83\xBC\xE3\x83\xB3\xE3\x82\xB7\xE3\x83\xA7\xE3\x83\x83\xE3\x83\x88 2020-11-16 12.21.14.png\"\r\nContent-Type: image/png\r\n">, "introduction"=>"オカリんこですよ\r\n岡とアリンコを合わせて\r\nオカリんこですよ\r\nアリンコのように\r\n非力な\r\nオカリんこですよ"}, "commit"=>"更新する", "id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16:in `update'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:17:in `update'
+  [1m[36mUser Update (0.3ms)[0m  [1m[33mUPDATE "users" SET "introduction" = ?, "image_id" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["introduction", "オカリんこですよ\r\n岡とアリンコを合わせて\r\nオカリんこですよ\r\nアリンコのように\r\n非力な\r\nオカリんこですよ"], ["image_id", "52663da9e5e299a074aed5ad9ab62c5d874b1ad629773f9f9ffd37e0dfdb"], ["updated_at", "2021-03-02 05:13:23.998239"], ["id", 2]]
+  ↳ app/controllers/users_controller.rb:17:in `update'
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:17:in `update'
+Redirected to http://localhost:3000/users/2
+Completed 302 Found in 11ms (ActiveRecord: 1.3ms | Allocations: 6584)
+
+
+Started GET "/users/2" for ::1 at 2021-03-02 14:13:24 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:6:in `show'
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mPet Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "pets" WHERE "pets"."user_id" = ? LIMIT ?[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:47
+  [1m[36mPost Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "posts" WHERE "posts"."user_id" = ? LIMIT ?[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:68
+  Rendered users/show.html.erb within layouts/application (Duration: 2.8ms | Allocations: 1906)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 20ms (Views: 15.8ms | ActiveRecord: 0.4ms | Allocations: 14557)
+
+
+Started GET "/attachments/0386f942007efe5fb971f8ceab0de331983f62a5/store/52663da9e5e299a074aed5ad9ab62c5d874b1ad629773f9f9ffd37e0dfdb/image" for ::1 at 2021-03-02 14:13:24 +0900
+Refile::App: [2021-03-02 14:13:24 +0900] GET "/0386f942007efe5fb971f8ceab0de331983f62a5/store/52663da9e5e299a074aed5ad9ab62c5d874b1ad629773f9f9ffd37e0dfdb/image" 200 4.0ms
+
+Started GET "/posts" for ::1 at 2021-03-02 14:13:35 +0900
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:5
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:8
+  Rendered posts/index.html.erb within layouts/application (Duration: 2.8ms | Allocations: 1888)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:40
+Completed 200 OK in 20ms (Views: 18.9ms | ActiveRecord: 0.3ms | Allocations: 13382)
+
+
+Started GET "/posts/1" for ::1 at 2021-03-02 14:13:36 +0900
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (2.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:25:in `show'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:26:in `show'
+  [1m[36mPet Load (0.1ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:27:in `show'
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:11
+  [1m[36mFavorite Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "favorites" WHERE "favorites"."post_id" = ? AND "favorites"."user_id" = ? LIMIT ?[0m  [["post_id", 1], ["user_id", 2], ["LIMIT", 1]]
+  ↳ app/models/post.rb:17:in `favorited_by?'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."post_id" = ?[0m  [["post_id", 1]]
+  ↳ app/views/posts/show.html.erb:13
+  [1m[36mPostComment Load (0.1ms)[0m  [1m[34mSELECT "post_comments".* FROM "post_comments" WHERE "post_comments"."post_id" = ?[0m  [["post_id", 1]]
+  ↳ app/views/posts/show.html.erb:35
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:37
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:37
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:37
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:37
+  Rendered posts/show.html.erb within layouts/application (Duration: 8.7ms | Allocations: 8202)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 26ms (Views: 20.6ms | ActiveRecord: 2.6ms | Allocations: 20815)
+
+

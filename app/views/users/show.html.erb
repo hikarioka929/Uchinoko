@@ -14,7 +14,20 @@
         <div class="col-4">
             <p><%= attachment_image_tag @user, :image, size: "300x300" %></p>
             お名前&emsp;<%= @user.name %>
-            <p><%= link_to "編集ページへ", edit_user_path(@user.id) %></p>
+            <p>
+                <% if current_user == @user %>
+                    <%= link_to "編集ページへ", edit_user_path(@user.id) %>
+                <% end %>
+            </p>
+            <p>
+                <% unless current_user == @user %>
+                    <% if current_user.following?(@user) %>
+                        <%= link_to "フォロー外す", user_relationships_path(@user), method: :delete, class:"btn btn-default"%>
+                    <% else %>
+                        <%= link_to "フォローする", user_relationships_path(@user), method: :post, class:"btn btn-primary"%>
+                    <% end %>
+                <% end %>
+            </p>
         </div>
         <div class="col-8">
             <% if @user.introduction == nil %>
