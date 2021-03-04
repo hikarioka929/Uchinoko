@@ -23,6 +23,7 @@ class PostsController < ApplicationController
 
     def show
         @post = Post.find(params[:id])
+        @post_comments = @post.post_comments
         @user = @post.user
         @pet = @post.pet
         @post_comment = PostComment.new
