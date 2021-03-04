@@ -1,0 +1,12 @@
+<div class="container contain2">
+    <div class="hukidasi">
+        <h1><%= @user.name %>がフォローしている人</h1>
+
+        <div>
+            <% @user.followings. each do |following| %>
+                <%= attachment_image_tag following, :image, size: "50x50" %>
+                <%= following.name %>
+            <% end %>
+        </div>
+    </div>
+</div>
