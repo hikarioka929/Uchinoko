@@ -7,17 +7,9 @@
                 <%= attachment_image_tag @user, :image, size: "100x100" %>
                 <%= @user.name %>&emsp;さんの投稿
                 <%= attachment_image_tag @post, :image, size: "300x300" %>
-                <p>
-                    <% if @post.favorited_by?(current_user) %>
-                        <%= link_to post_favorites_path(@post), method: :delete do %>
-                            ♥<%= @post.favorites.count %>
-                        <% end %>
-                    <% else %>
-                        <%= link_to post_favorites_path(@post), method: :post do %>
-                            ♡<%= @post.favorites.count %>
-                        <% end %>
-                    <% end %>
-                </p>
+                <div id="favorites_buttons_<%= @post.id %>">
+                    <%= render partial: 'favorites/favorite', locals: {post: @post} %>
+                </div>
             </div>
             <div class="col-8">
                 <%= attachment_image_tag @pet, :image, size: "100x100" %>
