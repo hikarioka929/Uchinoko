@@ -146,6 +146,8 @@ GEM
       mini_portile2 (~> 2.5.0)
       racc (~> 1.4)
     orm_adapter (0.5.0)
+    paranoia (2.4.2)
+      activerecord (>= 4.0, < 6.1)
     popper_js (1.16.0)
     public_suffix (4.0.6)
     puma (4.3.7)
@@ -279,6 +281,7 @@ DEPENDENCIES
   jbuilder (~> 2.7)
   jquery-rails
   listen (~> 3.2)
+  paranoia
   puma (~> 4.1)
   rails (~> 6.0.3, >= 6.0.3.4)
   refile!
