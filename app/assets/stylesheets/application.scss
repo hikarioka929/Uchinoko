@@ -56,7 +56,7 @@
     }
 }
 .contain {
-    background-image: image-url('3980993_s.jpg');
+    background-image: url('3980993_s.jpg');
     background-size: cover;
     background-position: center;
 }
@@ -128,4 +128,33 @@ a.btn-malformation {
 
 .test {
     display: inline-block;
+}
+
+.balloon {
+position: relative;
+background-color: #fff;
+padding: 50px 20px;
+margin: 0 100px;
+border: 2px solid black;
+color: #333;
+border-radius: 50%;
+font-size: 20px;
+}
+
+.balloon::before,
+.balloon::after {
+content: '';
+position: absolute;
+border: 12px solid transparent;
+top: 100%;
+left: 50%;
+}
+
+.balloon::before {
+border-top: 12px solid black;
+}
+
+.balloon::after {
+margin-top: -4px;
+border-top: 12px solid #fff;
 }
