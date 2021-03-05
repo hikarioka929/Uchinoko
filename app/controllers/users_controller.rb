@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-    before_action :authenticate_user!, except: [:index]
+    before_action :authenticate_user!, except: [:index, :cancel_done]
     before_action :authenticate_admin!, only: [:index]
 
     def show
@@ -25,11 +25,18 @@ class UsersController < ApplicationController
         @users = User.all
     end
 
-    # def confirm
-    # end
+    def confirm
+        @user = User.find(params[:id])
+    end
 
-    # def cancel
-    # end
+    def cancel
+        @user = User.find(params[:id])
+        @user.destroy
+        redirect_to cancel_done_users_path
+    end
+
+    def cancel_done
+    end
 
     def pets_index
         @user = User.find(params[:id])

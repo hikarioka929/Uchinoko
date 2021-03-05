@@ -1,0 +1,13 @@
+<div class="container contain2">
+    <div class="hukidasi">
+        <h1>退会ページ</h1>
+
+        <p>
+            本当に退会しますか？<br>
+            退会すると、登録したうちの子や投稿した記事が消去されます。<br>
+            退会する場合は『退会する』を押してください。
+        </p>
+        <p><%= link_to "退会しない", user_path(@user) %></p>
+        <p><%= link_to "退会する", cancel_user_path(@user), method: :delete %></p>
+    </div>
+</div>

@@ -21,6 +21,11 @@ end
       get 'pets' => 'users#pets_index'
       get 'followers'
       get 'followings'
+      get 'confirm'
+      delete 'cancel'
+    end
+    collection do
+      get 'cancel_done'
     end
     resource :relationships, only: [:create,:destroy]
   end
