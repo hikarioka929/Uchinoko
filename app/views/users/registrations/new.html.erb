@@ -29,9 +29,17 @@
   </div>
 
   <div class="actions">
-    <%= f.submit "新規登録" %>
+    <%= f.submit "新規登録", class: "btn-square col-5" %>
   </div>
 <% end %>
+
+<p>
+  <br>
+  <span class="login-btn">すでにご登録済みの方</span><br><br>
+  お手数ですが、
+  <%= link_to "こちら", new_user_session_path %>
+  からログインをお願いいたします。
+</p>
 
 </div>
 </div>

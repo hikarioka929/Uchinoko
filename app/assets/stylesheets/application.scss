@@ -21,7 +21,7 @@
 }
 
 .header-css {
-    background-color: #A18880;
+    background-color: #FF8856;
 }
 
 .header-logo {
@@ -36,7 +36,13 @@
 }
 
 .logobig {
+    color: white;
     font-size: 30px;
+    transition: all 0.3s;
+    &:hover {
+        color: dimgrey;
+        text-decoration: none;
+    }
 }
 
 .navbar .nav-item {
@@ -74,7 +80,7 @@ a.btn-malformation {
 
     color: #fff;
     border-radius: 100% 80px / 80px 100%;
-    background-color: #eb6100;
+    background-color: #FF8856;
     transition: all 0.3s;
 
     &:hover {
@@ -106,7 +112,7 @@ a.btn-malformation {
     max-width: 100%;
     color: #555;
     font-size: 16px;
-    background: #eb6100;
+    background: #FF8856;
     color: white;
     font-size: 50px;
 
@@ -117,7 +123,7 @@ a.btn-malformation {
     left: 50%;
     margin-left: -15px;
     border: 15px solid transparent;
-    border-top: 15px solid #eb6100
+    border-top: 15px solid #FF8856;
     }
 }
 }
@@ -132,13 +138,12 @@ a.btn-malformation {
 
 .balloon {
 position: relative;
-background-color: #fff;
-padding: 50px 20px;
-margin: 0 100px;
+background-color: #FFFF88;
 border: 2px solid black;
-color: #333;
+color: dimgrey;
 border-radius: 50%;
 font-size: 20px;
+margin: 0 auto;
 }
 
 .balloon::before,
@@ -156,5 +161,43 @@ border-top: 12px solid black;
 
 .balloon::after {
 margin-top: -4px;
-border-top: 12px solid #fff;
+border-top: 12px solid #FFFF88;
+}
+
+.btn-square {
+  display: inline-block;
+  font-size: 30px;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  background: #FF8856;/*ボタン色*/
+  color: #FFF;
+  border-bottom: solid 4px black;
+  border-radius: 10px;
+  margin: 20px 0 50px 0;
+  transition: all 0.3s;
+}
+.btn-square:hover {
+  /*ボタンを押したとき*/
+  -webkit-transform: translateY(4px);
+  transform: translateY(4px);/*下に動く*/
+  border-bottom: none;/*線を消す*/
+  text-decoration: none;
+  color: dimgrey;
+}
+
+.login-btn {
+    background-color: #FF8856;
+    color: white;
+}
+
+.testtest {
+    background-color: dimgrey;
+    padding: 50px 0 30px 0;
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.testt {
+    background-color: white;
+    border-radius: 50%;
 }

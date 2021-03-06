@@ -3,6 +3,7 @@
 <h1>ログインページ</h1>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+
   <div class="field">
     メールアドレス
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
@@ -21,9 +22,17 @@
   <% end %>
 
   <div class="actions">
-    <%= f.submit "ログイン" %>
+    <%= f.submit "ログイン", class: "btn-square col-5" %>
   </div>
 <% end %>
+
+<p>
+  <br>
+  <span class="login-btn">ご登録がお済みでない方</span><br><br>
+  お手数ですが、
+  <%= link_to "こちら", new_user_registration_path%>
+  から新規登録をお願いいたします。
+</p>
 
 </div>
 </div>

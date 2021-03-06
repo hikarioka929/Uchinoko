@@ -17,9 +17,9 @@
   <nav class="navbar navbar-expand-lg header-css">
     <div class="container">
     <% if admin_signed_in? %>
-    <%= link_to "うちの子。", admins_root_path, class: "header-logo logobig" %>
+      <%= image_tag('rabbit_color.png', :size => '50x70') %><%= link_to "うちの子。", admins_root_path, class: "logobig" %><%= image_tag('marmot_color.png', :size => '70x50') %>
     <% else %>
-    <%= link_to "うちの子。", root_path, class: "header-logo logobig" %>
+    <%= image_tag('rabbit_color.png', :size => '50x70') %><%= link_to "うちの子。", root_path, class: "logobig" %><%= image_tag('marmot_color.png', :size => '70x50') %>
     <% end %>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>

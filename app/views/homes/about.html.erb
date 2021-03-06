@@ -4,13 +4,22 @@
     <h2>〜What is Uchinoko?〜</h2>
     <p>
         うちの子。はペット自慢専用SNSです。<br><br>
-        <div class="balloon">
-            うちの子が可愛すぎて、みんなに自慢したい！<br>
-            みんなに見てほしいうちの子の可愛い写真がいっぱいある！<br>
-            でも、毎回ペットの写真載せたら迷惑かな...？<br>
-            でもでも、うちの子の可愛い姿を全世界に発信したーい！！<br><br>
-        </div>
-        <%= image_tag('r0627.png', :size => '200x200') %><br><br>
+    </p>
+</div>
+</div>
+    <div class="testtest">
+    <div class="balloon col-7">
+        <br>
+        うちの子が可愛すぎて、みんなに自慢したい！<br>
+        みんなに見てほしいうちの子の可愛い写真がいっぱいある！<br>
+        でも、毎回ペットの写真載せたら迷惑かな...？<br>
+        でもでも、うちの子の可愛い姿を全世界に発信したーい！！<br><br>
+    </div>
+    
+    <%= image_tag('n0627.png', :size => '200x200', class: "testt") %><br><br>
+    </div>
+    <div class="container contain2">
+<div class="hukidasi">
         <p>
             ...そんな悩みを抱えたあなたのために生まれました。<br>
             ここでなら、他の人の心配をする必要はありません。<br>
@@ -18,6 +27,6 @@
             思いっきりあなたの可愛いうちの子を自慢してください！
         </p>
     </p>
-    <%= link_to "うちの子。を始める", new_user_registration_path, class: "" %>
-</div>
+    <%= link_to "うちの子。を始める", new_user_registration_path, class: "btn-square col-9" %>
+    </div>
 </div>
