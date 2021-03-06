@@ -1,21 +1,24 @@
 <div class="container contain2">
 <div class="hukidasi">
 <h1>ログインページ</h1>
+</div>
+</div>
 
+<div class="testtest">
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 
   <div class="field">
-    メールアドレス
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    <%= f.label :email, "メールアドレス", class: "white" %><br>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "col-3" %>
   </div>
 
   <div class="field">
-    パスワード
-    <%= f.password_field :password, autocomplete: "current-password" %>
+    <%= f.label :password, "パスワード", class: "white" %><br>
+    <%= f.password_field :password, autocomplete: "current-password", class: "col-3" %>
   </div>
 
   <% if devise_mapping.rememberable? %>
-    <div class="field">
+    <div class="field white">
       <%= f.check_box :remember_me %>
       <%= f.label :remember_me %>
     </div>
@@ -25,7 +28,10 @@
     <%= f.submit "ログイン", class: "btn-square col-5" %>
   </div>
 <% end %>
+</div>
 
+<div class="container contain2">
+<div class="hukidasi">
 <p>
   <br>
   <span class="login-btn">ご登録がお済みでない方</span><br><br>

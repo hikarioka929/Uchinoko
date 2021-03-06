@@ -1,38 +1,41 @@
 <div class="container contain2">
 <div class="hukidasi">
 <h1>新規登録ページ</h1>
+</div>
+</div>
 
+<div class="testtest">
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "users/shared/error_messages", resource: resource %>
 
   <div class="field">
-    お名前
-    <%= f.text_field :name, autofocus: true, autocomplete: "name" %>
+    <%= f.label :name, "お名前", class: "white" %><br>
+    <%= f.text_field :name, autofocus: true, autocomplete: "name", class: "col-3" %>
   </div>
 
   <div class="field">
-    メールアドレス
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    <%= f.label :email, "メールアドレス", class: "white" %><br>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "col-3" %>
   </div>
 
   <div class="field">
-    パスワード
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> 文字以上)</em>
-    <% end %>
-    <%= f.password_field :password, autocomplete: "new-password" %>
+    <%= f.label :password, "パスワード(6文字以上)", class: "white" %><br>
+    <%= f.password_field :password, autocomplete: "new-password", class: "col-3" %>
   </div>
 
   <div class="field">
-    確認用パスワード
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+    <%= f.label :password_confirmation, "確認用パスワード", class: "white" %><br>
+    <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "col-3" %>
   </div>
 
   <div class="actions">
     <%= f.submit "新規登録", class: "btn-square col-5" %>
   </div>
 <% end %>
+</div>
 
+<div class="container contain2">
+<div class="hukidasi">
 <p>
   <br>
   <span class="login-btn">すでにご登録済みの方</span><br><br>
