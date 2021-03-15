@@ -1,2 +1,2 @@
 $('#comment_textarea').val('')
-$('#comment_table').html("<%= j(render 'post_comments/post_comment', post_comments: @post_comments ) %>")
+$('#comment_table').html("<%= j(render 'post_comments/post_comment', post_comments: @post_comments, post_comment: @post_comment ) %>")
