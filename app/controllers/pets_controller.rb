@@ -27,10 +27,14 @@ class PetsController < ApplicationController
 
     def edit
         @pet = Pet.find(params[:id])
+        if @pet.user != current_user
+            redirect_to pet_path(@pet)
+        end
     end
 
     def update
         @pet = Pet.find(params[:id])
+        @pet.sex = params[:pet][:sex].to_i
         if @pet.update(pet_params)
             redirect_to pet_path(@pet.id)
         else

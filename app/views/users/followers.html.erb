@@ -4,7 +4,7 @@
 
         <div>
             <% @user.followers. each do |follower| %>
-                <%= attachment_image_tag follower, :image, size: "50x50" %>
+                <%= attachment_image_tag follower, :image, size: "50x50", class: "radius" %>
                 <%= follower.name %>
             <% end %>
         </div>

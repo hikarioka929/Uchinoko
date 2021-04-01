@@ -4,14 +4,17 @@
     </div>
         <div class="row">
         <div class="col-4">
-            <p><%= attachment_image_tag @pet, :image, size: "300x300" %></p>
-            <p>お名前&emsp;<%= @pet.name %></p>
-            <p><%= @pet.sex %></p>
-            <p><%= @pet.age %></p>
+            <p><%= attachment_image_tag @pet, :image, size: "300x300", class: "radius" %></p>
+            <p>お名前:&emsp;<%= @pet.name %></p>
+            <p>性別:&emsp;<%= @pet.sex %></p>
+            <p>年齢:&emsp;<%= @pet.age %>才</p>
             <p><%= link_to "編集ページへ", edit_pet_path(@pet.id) %></p>
         </div>
         <div class="col-8">
-            <%= @pet.introduction %>
+            <div class="maste">
+                <span class="tape">紹介文</span>
+                <p><%= @pet.introduction %></p>
+            </div>
         </div>
     </div
 </div>

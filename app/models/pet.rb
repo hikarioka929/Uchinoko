@@ -13,4 +13,6 @@ class Pet < ApplicationRecord
         validates :image
         validates :genre_id
     end
+
+    validates :introduction, length: { maximum: 1500 }
 end

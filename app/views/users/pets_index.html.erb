@@ -9,18 +9,22 @@
         <table class="table">
             <tbody>
                 <tr>
+                <div class="border-design"></div>
                     <% @pets.each do |pet| %>
 
                         <p>
                             <%= link_to pet_path(pet) do %>
-                                <%= attachment_image_tag pet, :image, size: "250x250" %>
+                                <%= attachment_image_tag pet, :image, size: "250x250", class: "radius" %>
                             <% end %>
                         </p>
-                        <p><%= pet.name %></p>
-                        <p><%= pet.sex %></p>
-                        <p><%= pet.age %></p>
-                        <p><%= pet.introduction %></p>
-
+                        <p>お名前:&emsp;<%= pet.name %></p>
+                        <p>性別:&emsp;<%= pet.sex %></p>
+                        <p>年齢:&emsp;<%= pet.age %>才</p>
+                        <div class="maste">
+                        <span class="tape">紹介文</span>
+                            <p><%= pet.introduction %></p>
+                        </div>
+                        <div class="border-design"></div>
                     <% end %>
                 </tr>
             </tbody>

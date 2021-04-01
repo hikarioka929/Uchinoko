@@ -4,25 +4,28 @@
 
         <div class="row">
             <div class="col-4">
-                <%= attachment_image_tag @user, :image, size: "100x100" %>
+                <%= attachment_image_tag @user, :image, size: "100x100", class: "radius" %>
                 <%= @user.name %>&emsp;さんの投稿
-                <%= attachment_image_tag @post, :image, size: "300x300" %>
+                <%= attachment_image_tag @post, :image, size: "300x300", class: "radius" %>
                 <div id="favorites_buttons_<%= @post.id %>">
                     <%= render partial: 'favorites/favorite', locals: {post: @post} %>
                 </div>
             </div>
             <div class="col-8">
-                <%= attachment_image_tag @pet, :image, size: "100x100" %>
+                <%= attachment_image_tag @pet, :image, size: "100x100", class: "radius" %>
                 <%= @pet.name %>
                 <p>タイトル：<%= @post.title %></p>
-                <p>本文：<%= @post.body %></p>
+                <div class="maste">
+                    <span class="tape">本文</span>
+                    <p><%= @post.body %></p>
+                </div>
             </div>
         </div>
         <%= form_with model: [@post, @post_comment], remote: true do |f| %>
-            <%= f.text_area :body, placeholder: "コメントをここに", class: "col-10", rows: '7', id: "comment_textarea" %>
-            <%= f.submit "送信" %>
+            <%= f.text_area :body, placeholder: "コメントをここに", class: "col-12", rows: '7', id: "comment_textarea" %>
+            <%= f.submit "送信", class: "col-12 comment-height" %>
         <% end %>
-        <p>コメント一覧</p>
+        <h1>コメント一覧</h1>
 
         <div id="comment_table">
             <%= render 'post_comments/post_comment', post_comments: @post_comments %>

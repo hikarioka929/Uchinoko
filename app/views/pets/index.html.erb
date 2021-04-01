@@ -12,24 +12,26 @@
                 <th>カテゴリ</th>
                 <th></th>
             </thead>
+            <% @pets.each do |pet| %>
             <tbody>
                 <tr>
-                    <% @pets.each do |pet| %>
                         <td>
                             <%= link_to pet_path(pet) do %>
-                                <%= attachment_image_tag pet, :image, size: "100x100" %>
+                                <%= attachment_image_tag pet, :image, size: "100x100", class: "radius" %>
                             <% end %>
                         </td>
-                        <td><%= pet.name %></td>
-                        <td><%= pet.introduction %></td>
+                        <td>
+                            <%= pet.name %>
+                        </td>
+                        <td><%= pet.introduction.truncate(40) %></td>
                         <td><%= pet.sex %></td>
-                        <td><%= pet.age %></td>
+                        <td><%= pet.age %>才</td>
                         <td><%= pet.genre.name %></td>
                         <td>
                             <%= link_to user_path(pet.user) do %>
-                                <%= attachment_image_tag pet.user, :image, size: "50x50" %>
+                                <%= attachment_image_tag pet.user, :image, size: "50x50", class: "radius" %>
                             <% end %>
-                            さんの家族
+                            <%= pet.user.name %>さんの家族
                         </td>
                     <% end %>
                 </tr>

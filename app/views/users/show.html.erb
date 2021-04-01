@@ -12,8 +12,10 @@
     </div>
     <div class="row">
         <div class="col-4">
-            <p><%= attachment_image_tag @user, :image, size: "300x300" %></p>
+            <p><%= attachment_image_tag @user, :image, size: "300x300", class: "radius" %></p>
             お名前&emsp;<%= @user.name %>
+            <p><%= link_to "#{@user.followings.count}フォロー", followings_user_path(@user) %></p>
+            <p><%= link_to "#{@user.followers.count}フォロワー", followers_user_path(@user) %></p>
             <p>
                 <% if current_user == @user %>
                     <%= link_to "編集ページへ", edit_user_path(@user.id) %>
@@ -29,11 +31,14 @@
                 <% end %>
             </p>
         </div>
-        <div class="col-8">
+        <div class="col-8 introduction-size">
             <% if @user.introduction == nil %>
                 <p>まだ紹介文がありません</p>
             <% else %>
-                <%= @user.introduction %>
+            <div class="maste">
+                <span class="tape">紹介文</span>
+                <p><%= @user.introduction %></p>
+            </div>
             <% end %>
         </div>
     </div>
@@ -49,14 +54,23 @@
             <p><%= link_to "うちの子登録ページへ", new_pet_path %></p>
         <% else %>
         <table class="table">
-            <tbody>
+            <thead>
+                <th></th>
+                <th>お名前</th>
+                <th>紹介文</th>
+                <th>性別</th>
+                <th>年齢</th>
+                <th>カテゴリ</th>
+                <th></th>
+            </thead>
             <tr>
             <% @pets.each do |pet| %>
-                <td><%= attachment_image_tag pet, :image, size: "100x100" %></td>
+            <tbody>
+                <td><%= attachment_image_tag pet, :image, size: "100x100", class: "radius" %></td>
                 <td><%= pet.name %></td>
-                <td><%= pet.introduction %></td>
+                <td><%= pet.introduction.truncate(70) %></td>
                 <td><%= pet.sex %></td>
-                <td><%= pet.age %></td>
+                <td><%= pet.age %>才</td>
                 <td><%= pet.genre.name %></td>
             <% end %>
             </tr>
@@ -74,13 +88,13 @@
             <div class="test">
                 <p>
                     <%= link_to user_path(post.user) do %>
-                        <%= attachment_image_tag post.user, :image, size: "50x50" %>
+                        <%= attachment_image_tag post.user, :image, size: "50x50", class: "radius" %>
                         <%= post.user.name %>
                     <% end %>
                 </p>
                 <span>
                     <%= link_to post_path(post) do %>
-                    <%= attachment_image_tag post, :image, size: "200x200" %>
+                    <%= attachment_image_tag post, :image, size: "200x200", class: "radius" %>
                 </span>
                 <p><%= post.title %></p>
                 <% end %>
