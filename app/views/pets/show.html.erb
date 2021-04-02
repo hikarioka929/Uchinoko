@@ -1,14 +1,17 @@
 <div class="container contain2">
     <div class="hukidasi">
         <h1><%= @pet.name %>のページ</h1>
-    </div>
-        <div class="row">
+    <div class="row">
         <div class="col-4">
             <p><%= attachment_image_tag @pet, :image, size: "300x300", class: "radius" %></p>
             <p>お名前:&emsp;<%= @pet.name %></p>
             <p>性別:&emsp;<%= @pet.sex %></p>
             <p>年齢:&emsp;<%= @pet.age %>才</p>
-            <p><%= link_to "編集ページへ", edit_pet_path(@pet.id) %></p>
+            <p>
+                <% if @pet.user == current_user %>
+                    <%= link_to "編集ページへ", edit_pet_path(@pet.id) %>
+                <% end %>
+            </p>
         </div>
         <div class="col-8">
             <div class="maste">
@@ -16,5 +19,25 @@
                 <p><%= @pet.introduction %></p>
             </div>
         </div>
-    </div
+    </div>
+    <h1><%= @pet.name %>の投稿一覧</h1>
+    <div>
+            <% @pet.posts.each do |post| %>
+            <div class="test">
+                <p>
+                    <%= link_to user_path(post.user) do %>
+                        <%= attachment_image_tag post.user, :image, size: "50x50", class: "radius" %>
+                        <%= post.user.name %>
+                    <% end %>
+                </p>
+                <span>
+                    <%= link_to post_path(post) do %>
+                    <%= attachment_image_tag post, :image, size: "200x200", class: "radius" %>
+                </span>
+                <p><%= post.title %></p>
+                <% end %>
+                </div>
+            <% end %>
+        </div>
+    </div>
 </div>
