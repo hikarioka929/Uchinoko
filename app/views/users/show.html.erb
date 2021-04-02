@@ -68,7 +68,7 @@
             <tbody>
                 <td><%= attachment_image_tag pet, :image, size: "100x100", class: "radius" %></td>
                 <td><%= pet.name %></td>
-                <td><%= pet.introduction.truncate(70) %></td>
+                <td><%= pet.introduction.truncate(40) %></td>
                 <td><%= pet.sex %></td>
                 <td><%= pet.age %>才</td>
                 <td><%= pet.genre.name %></td>
