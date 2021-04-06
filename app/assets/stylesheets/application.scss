@@ -264,8 +264,8 @@ border-top: 12px solid #FFFF88;
     linear-gradient(45deg, rgba(250,215,215,.5) 25%, transparent 25%, transparent 50%,  rgba(250, 215, 215, 0.63) 50%, rgba(250,215,215,.5) 75%, transparent 75%, transparent 100%);
     background-size: 40px 40px;
     padding: 1em;
-  }
-  .tape{
+    }
+    .tape{
     position: absolute;
     top: -0.75em;
     background-color: rgba(255,255,255,.4);
@@ -275,8 +275,33 @@ border-top: 12px solid #FFFF88;
     padding: 0.25em 2em;
     color: black;
     transform: rotate(-3deg);
-  }
-  .maste p {
+    }
+    .maste p {
     color: black;
     padding: 15px 10px 10px 10px;
-  }
+}
+
+.footerdesign {
+    padding: 50px 0;
+    background-color: #FF8856;
+    color: white;
+}
+
+.footer-logo {
+    display: inline-block;
+    color: white;
+    transition: all 0.3s;
+    font-size: 20px;
+    margin: 20px 0 0 0;
+    &:hover {
+        color: dimgrey;
+        text-decoration: none;
+        letter-spacing: 3px;
+    }
+}
+
+.abouthikari {
+    color: white;
+    font-size: 20px;
+    transition: all 0.3s;
+}

@@ -81,7 +81,30 @@
     </div>
   </nav>
   </header>
-        <%= yield %>
 
+  <%= yield %>
+
+  <footer class="footerdesign">
+    <div class="container">
+    <%= image_tag('rabbit_color.png', :size => '50x60') %><%= link_to "うちの子。", root_path, class: "logobig" %><%= image_tag('marmot_color.png', :size => '50x60') %>
+      <div class="row">
+        <div class="col-4">
+          <%= link_to "うちの子。とは？", about_path, class: "footer-logo" %><br>
+          <%= link_to "サイトマップ", root_path, class: "footer-logo" %>
+        </div>
+        <div class="col-4">
+          <p class="abouthikari">うちの子。を作った人</p>
+          <span>岡ひかり / HIKARI OKA</span><br>
+          <%= image_tag('Github.png', :size => '50x50', class: "footer-logo") %>
+          <%= image_tag('twitter.png', :size => '50x50', class: "footer-logo") %>
+          <%= image_tag('Instagram.png', :size => '50x50', class: "footer-logo") %>
+        </div>
+        <div class="col-4">
+          <p>お問い合わせはこちら</p>
+          <%= link_to "お問い合わせフォーム", root_path, class: "footer-logo" %>
+        </div>
+      </div>
+    </div>
+  </footer>
   </body>
 </html>
