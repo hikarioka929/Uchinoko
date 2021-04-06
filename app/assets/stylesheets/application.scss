@@ -51,13 +51,11 @@
 
 .toppage {
     text-align: center;
-    padding: 130px 0 300px 0;
+    padding: 230px 0 300px 0;
     color: white;
-    & h1 {
-        text-align: right;
-    }
     & p {
         text-align: right;
+        margin-top: 30px;
         font-size: 30px;
     }
 }
@@ -71,7 +69,7 @@
 }
 
 .mal {
-    padding-top: 100px;
+    padding-top: 50px;
 }
 
 a.btn-malformation {
@@ -285,6 +283,7 @@ border-top: 12px solid #FFFF88;
     padding: 50px 0;
     background-color: #FF8856;
     color: white;
+    text-align: center;
 }
 
 .footer-logo {
@@ -304,4 +303,66 @@ border-top: 12px solid #FFFF88;
     color: white;
     font-size: 20px;
     transition: all 0.3s;
+}
+
+.footer-main-logo {
+    display: inline-block;
+    color: white;
+    font-size: 30px;
+    transition: all 0.3s;
+    &:hover {
+        color: dimgrey;
+        text-decoration: none;
+    }
+    margin-bottom: 20px;
+}
+
+
+
+
+
+@import "mixin";
+
+.animate-title {
+    transform: translate(-50%, -50%);
+    color: white;
+    opacity: 0;
+    text-align: right;
+    font-size: 40px;
+    position: absolute;
+    top: 300px;
+    left: 70%;
+
+    &.inview {
+    opacity: 1;
+
+    & .char {
+        display: inline-block;
+
+    @include animation(
+        $name: kf-animate-chars,
+        $duration: 0.5s,
+        $timing-function: cubic-bezier(0.39, 1.57, 0.58, 1),
+        $fill-mode: both
+    );
+
+    @for $i from 1 through 10 {
+        &:nth-child(#{$i}) {
+            animation-delay: $i * 0.15s;
+        }
+    }
+    }
+}
+}
+
+@keyframes kf-animate-chars {
+    0% {
+    opacity: 0;
+    transform: translateY(-50%);
+    }
+
+    100% {
+    opacity: 1;
+    transform: translateY(0);
+    }
 }
