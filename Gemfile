@@ -1,4 +1,4 @@
-source 'https://rubygems.org'
+source 'http://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.5.7'
@@ -61,3 +61,4 @@ gem "refile-mini_magick"
 gem 'enum_help'
 gem 'paranoia'
 gem 'devise-i18n-views'
+gem "aws-sdk-s3", require: false
