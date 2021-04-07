@@ -5,13 +5,13 @@
             <% @posts.each do |post| %>
             <div class="test">
                 <p>
-                    <%= link_to user_path(post.user) do %>
+                    <%= link_to user_path(post.user), class: "change-link-color" do %>
                         <%= attachment_image_tag post.user, :image, size: "50x50", class: "radius" %>
                         <%= post.user.name %>
                     <% end %>
                 </p>
                 <span>
-                    <%= link_to post_path(post) do %>
+                    <%= link_to post_path(post), class: "change-link-color" do %>
                     <%= attachment_image_tag post, :image, size: "300x300", class: "radius" %>
                 </span>
                 <p><%= post.title %></p>

@@ -1,19 +1,19 @@
 <div class="contain">
     <div class="toppage">
         <div class="container">
-            <div class="animate-title inview">
-            <span class="char">う</span>
-            <span class="char">ち</span>
-            <span class="char">の</span>
-            <span class="char">子</span>
-            <span class="char">へ</span>
-            <span class="char">よ</span>
-            <span class="char">う</span>
-            <span class="char">こ</span>
-            <span class="char">そ</span>
-            <span class="char">！</span>
-        </div>
-            <p>
+            <div class="animate-title inview toppage-animation">
+                <span class="char">う</span>
+                <span class="char">ち</span>
+                <span class="char">の</span>
+                <span class="char">子</span>
+                <span class="char">へ</span>
+                <span class="char">よ</span>
+                <span class="char">う</span>
+                <span class="char">こ</span>
+                <span class="char">そ</span>
+                <span class="char">！</span>
+            </div>
+            <p class="toppage-p">
                 うちの子。はあなたのペット自慢を<br>
                 思う存分していただくサイトになります。<br>
                 さあ、親バカへの扉を開けましょう！<br>
@@ -21,6 +21,51 @@
             <p class="mal">
                 <%= link_to "Welcome to うちの子。", about_path, class: "btn-malformation" %>
             </p>
+        </div>
+    </div>
+</div>
+<div class="toppage-ex">
+    <div class="container">
+        <div class="animation-title inview">
+            <span class="char">う</span>
+            <span class="char">ち</span>
+            <span class="char">の</span>
+            <span class="char">子</span>
+            <span class="char">の</span>
+            <span class="char">つ</span>
+            <span class="char">か</span>
+            <span class="char">い</span>
+            <span class="char">か</span>
+            <span class="char">た</span>
+        </div>
+        <div class="row">
+            <div class="col-4">
+                <%= image_tag('hold_smartphone_color.png', :size => '250x450', class: "phone-img" ) %>
+            </div>
+            <div class="col-8 toppage-test">
+                <br>
+                <h2 class="step1">
+                    一緒に住んでいるうちの子を登録しよう！<br><br>
+                    登録したうちの子を投稿したら、<br>
+                    いいねやコメントがもらえるかも？<br>
+                </h2>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="step2">
+    <div class="container">
+        <div class="row">
+            <div class="col-8 toppage-test2">
+                <h2 class="step1">
+                    お気に入りの子を見つけよう！<br><br>
+                    カテゴリ検索でうちの子と同じ種類の<br>
+                    友達を探してみてね<br>
+                </h2>
+            </div>
+            <div class="col-4">
+                <%= image_tag('dog_color.png', :size => '300x350', class: "dog-img") %>
+            </div>
         </div>
     </div>
 </div>
